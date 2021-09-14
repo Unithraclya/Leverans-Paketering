@@ -78,6 +78,8 @@
   font-size: small;
   grid-column: 5;
   margin: auto;
+  text-decoration: none;
+  color: var(--black);
 }
 
 .HeartIcon {
