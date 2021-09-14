@@ -8,6 +8,7 @@ import PosterPage from './pages/PosterPage';
 import Login from './pages/Login';
 import Confirmation from './pages/Confirmation';
 import Nav from './components/Nav';
+import Error404 from './pages/Error404';
 
 
 export default function App() {
@@ -34,6 +35,8 @@ export default function App() {
         <Route exact path="/Login" component={Login} />
 
         <Route exact path="/Confirmation" component={Confirmation} />
+
+        <Route exact path="/Error404" component={Error404} />
 
       </Switch>
       
