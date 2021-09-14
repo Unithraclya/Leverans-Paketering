@@ -1,6 +1,7 @@
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState} from "react"
 import NavStyle from '../css/Nav.module.css'
 import React from 'react'
+import {Link} from 'react-router-dom';
 
 //Importing Icons
 import SearchIcon from '../icons/search36dp.svg'
@@ -50,9 +51,9 @@ export default function Nav() {
      
      <ul 
         className={NavStyle.Links} >
-        <a className={NavStyle.Link}href="#Home">Home</a>
-        <a className={NavStyle.Link}href="#CreateAccount">Skapa Konto</a>
-        <a className={NavStyle.Link}href="#Login">Logga in</a>
+        <Link to="/" className={NavStyle.Link}>Home</Link>
+        <Link to="/CreateAccount"className={NavStyle.Link}>Skapa Konto</Link>
+        <Link to="/Login" className={NavStyle.Link}>Logga in</Link>
      </ul>
    </div>
      
