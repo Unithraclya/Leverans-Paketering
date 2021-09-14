@@ -71,10 +71,10 @@ export default function Nav() {
   </div> 
  
 
-            <img className ={NavStyle.SearchIcon} src={SearchIcon} alt = 'Search' />
-            <h2 className={NavStyle.CompanyText}>POSTERGANG.COM</h2>
-            <img className ={NavStyle.HeartIcon}src={HeartIcon} alt = 'Like' />
-            <img className ={NavStyle.CartIcon}src={CartIcon} alt = 'Cart' />
+            <Link to="/Search" className ={NavStyle.SearchIcon}><img src={SearchIcon} alt = 'Search' /></Link>
+            <Link to="/" className={NavStyle.CompanyText}>POSTERGANG.COM </Link>
+            <Link to="/LikedPosters"className ={NavStyle.HeartIcon}><img src={HeartIcon} alt = 'Like'/></Link>
+            <Link to="/Cart"className ={NavStyle.CartIcon}><img src={CartIcon} alt = 'Cart'/></Link>
            
             {/* Empty line */}
             <hr className={NavStyle.HeaderLine}/>
