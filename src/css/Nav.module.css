@@ -17,13 +17,12 @@
 }
 
 .Links {
-  padding: 8px;
+  padding: 0px;
   cursor: pointer;
-  display: inline-grid;
   row-gap: 70px;
-  margin-bottom: 21px;
   margin-top: 34px;
-  margin-top: 15%;
+  margin-top: 100px;
+  display: grid;
 }
 
 .TopNav {
@@ -41,11 +40,20 @@
   text-decoration: none;
   font-size: x-large;
   margin: auto;
+  width: 90%;
+  max-width: 280px;
+  height: 40px;
+  padding-top: 14px;
+}
+
+.Link:hover {
+  background-color: var(--lightgray);
+  border-radius: 8px;
 }
 
 .HeaderLine {
   border-style: none;
-  background-color: #e6e6e6;
+  background-color: var(--lightgray);
   height: 3px;
   width: -webkit-fill-available;
   grid-row: 2;
@@ -91,7 +99,7 @@
 .center:before,
 .center:after,
 .center div {
-  background: #000;
+  background: var(--black);
   content: "";
   display: block;
   height: 2px;
@@ -109,7 +117,7 @@
 }
 .center:hover:after {
   transform: translateY(-2px) rotate(-135deg);
-  background: #ffcd4c;
+  background: var(--yellow);
 }
 .center:hover div {
   transform: scale(0);

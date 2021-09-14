@@ -50,10 +50,9 @@ export default function Nav() {
      
      <ul 
         className={NavStyle.Links} >
-        <a className={NavStyle.Link}href="#news">News
-        </a>
-        <a className={NavStyle.Link}href="#contact">Contact</a>
-        <a className={NavStyle.Link}href="#about">About</a>
+        <a className={NavStyle.Link}href="#Home">Home</a>
+        <a className={NavStyle.Link}href="#CreateAccount">Skapa Konto</a>
+        <a className={NavStyle.Link}href="#Login">Logga in</a>
      </ul>
    </div>
      
