@@ -1,0 +1,116 @@
+/* Navstyle.css */
+
+.HeaderGrid {
+  display: grid;
+  max-width: 600px;
+  width: -webkit-fill-available;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  align-items: center;
+  margin: 15px auto auto auto;
+  column-gap: 12px;
+}
+
+.MenuHeader {
+  width: fit-content;
+  margin: auto;
+}
+
+.Links {
+  padding: 8px;
+  cursor: pointer;
+  display: inline-grid;
+  row-gap: 70px;
+  margin-bottom: 21px;
+  margin-top: 34px;
+  margin-top: 15%;
+}
+
+.TopNav {
+  position: fixed;
+  top: 0%;
+  bottom: 0%;
+  background: #fffffffa;
+  margin: auto;
+  width: 100%;
+}
+
+/* Style the Nav menu */
+.Link {
+  color: black;
+  text-decoration: none;
+  font-size: x-large;
+  margin: auto;
+}
+
+.HeaderLine {
+  border-style: none;
+  background-color: #e6e6e6;
+  height: 3px;
+  width: -webkit-fill-available;
+  grid-row: 2;
+  grid-column: 1 / -1;
+  margin: 7px auto auto auto;
+}
+
+/* Styles for icons */
+
+.SearchIcon,
+.HeartIcon,
+.CartIcon,
+.center {
+  margin: auto;
+  cursor: pointer;
+}
+.SearchIcon {
+  grid-column: 3;
+}
+
+.CompanyText {
+  font-size: small;
+  grid-column: 5;
+  margin: auto;
+}
+
+.HeartIcon {
+  grid-column: 7;
+}
+
+.CartIcon {
+  grid-column: 8;
+}
+
+/* Nav Menu */
+
+.center {
+  width: 28px;
+  grid-column: 2;
+  z-index: 2;
+}
+
+.center:before,
+.center:after,
+.center div {
+  background: #000;
+  content: "";
+  display: block;
+  height: 2px;
+  border-radius: 3px;
+  margin: 5px 0;
+  cursor: pointer;
+  transition: ease 0.6s;
+  -webkit-transition: ease 0.6s;
+  -moz-transition: ease 0.6s;
+  -o-transition: ease 0.6s;
+}
+
+.center:hover:before {
+  transform: translateY(12px) rotate(135deg);
+}
+.center:hover:after {
+  transform: translateY(-2px) rotate(-135deg);
+  background: #ffcd4c;
+}
+.center:hover div {
+  transform: scale(0);
+}
