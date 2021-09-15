@@ -12,6 +12,11 @@ const errorStyle = {
     margin: 'auto',
     left: '25%',
     right: '25%', 
+    zIndex:'-5',
+   
+
+    
+  
 }
 
 
@@ -19,7 +24,7 @@ const errorStyle = {
 
 export default function Error() {
     return (
-        <div style={errorStyle}>
+        <div style={errorStyle} >
             <img src={Error404} alt = 'Error 404'/>
             <h1>Error 404</h1>
             <h2>Page not found</h2>

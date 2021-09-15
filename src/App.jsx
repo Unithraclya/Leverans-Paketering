@@ -36,7 +36,7 @@ export default function App() {
 
         <Route exact path="/Confirmation" component={Confirmation} />
 
-        <Route exact path="/Error404" component={Error404} />
+        <Route exact path="*" component={Error404} />
 
       </Switch>
       
