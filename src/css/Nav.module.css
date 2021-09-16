@@ -32,6 +32,7 @@
   background: #fffffffa;
   margin: auto;
   width: 100%;
+  z-index: 2;
 }
 
 /* Style the Nav menu */

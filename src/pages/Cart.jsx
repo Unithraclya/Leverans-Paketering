@@ -5,9 +5,9 @@ import React, { useEffect } from 'react'
 import CartStyle from '../css/Cart.module.css'
 
 /*Imported forms */
-import CartAddress from '../components/CartAddress';
-import CartShipping from '../components/CartShipping';
-import CartPayment from '../components/CartPayment';
+import CartAddress from '../components/CartAddressForm';
+import CartShipping from '../components/CartShippingForm';
+import CartPayment from '../components/CartPaymentForm';
 
 export default function Cart() {
     
