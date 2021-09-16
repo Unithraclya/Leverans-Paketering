@@ -1,0 +1,16 @@
+.banner{
+    width: 100vw;
+    height: 7vh;
+    background: rgb(255, 207, 50);
+    top: 6.5vh;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+}
+
+.text{
+    text-align: center;
+
+}

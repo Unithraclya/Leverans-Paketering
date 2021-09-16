@@ -9,6 +9,7 @@ import Login from './pages/Login';
 import Confirmation from './pages/Confirmation';
 import Nav from './components/Nav';
 import Error404 from './pages/Error404';
+import Banner from './components/Banner';
 
 
 export default function App() {
@@ -18,7 +19,7 @@ export default function App() {
     <div className="App">
 
       <Nav/>
-   
+      <Banner />
       
       <Switch>
 
