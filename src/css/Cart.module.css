@@ -1,0 +1,33 @@
+.cart {
+  display: block;
+  width: 90%;
+  margin: auto;
+}
+
+.Title {
+  display: flex;
+}
+
+.Total {
+  display: grid;
+  margin-top: 50px;
+  text-align: center;
+  font-weight: 600;
+  grid-template-rows: repeat(6, 25px);
+  align-items: center;
+}
+.TotalSum {
+  font-size: 20px;
+}
+
+.Totalbutton {
+  grid-row: 4;
+  width: 200px;
+  margin: auto;
+  height: 55px;
+  background-color: var(--green);
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  font-size: medium;
+}
