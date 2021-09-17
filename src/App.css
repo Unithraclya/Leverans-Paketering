@@ -11,6 +11,11 @@
   text-align: center;
 }
 
+.test{
+  height: 100vh;
+  padding-top: 5vh;
+}
+
 body {
   margin: auto 0;
 }
@@ -52,4 +57,10 @@ body {
 
 button {
   font-size: calc(10px + 2vmin);
+}
+
+
+@font-face {
+  font-family: Habibi;
+  src: url(sansation_light.woff);
 }

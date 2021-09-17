@@ -32,6 +32,7 @@
   background: #fffffffa;
   margin: auto;
   width: 100%;
+  z-index: 2;
 }
 
 /* Style the Nav menu */
@@ -78,6 +79,8 @@
   font-size: small;
   grid-column: 5;
   margin: auto;
+  text-decoration: none;
+  color: var(--black);
 }
 
 .HeartIcon {
