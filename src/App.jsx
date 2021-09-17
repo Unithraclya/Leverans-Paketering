@@ -8,13 +8,16 @@ import PosterPage from './pages/PosterPage';
 import Login from './pages/Login';
 import Confirmation from './pages/Confirmation';
 import Nav from './components/Nav';
+import LoginForm from './components/LoginForm';
+
 
 
 export default function App() {
-
+  
 
   return (
     <div className="App">
+      
 
       <Nav/>
    
@@ -36,6 +39,8 @@ export default function App() {
         <Route exact path="/Confirmation" component={Confirmation} />
 
       </Switch>
+
+      
       
     </div>
   )
