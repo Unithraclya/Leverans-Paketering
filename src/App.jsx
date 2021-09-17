@@ -25,8 +25,6 @@ export default function App() {
 
         <Route exact path="/" component={Home} />
       
-        <Route exact path="/Nav" component={Nav} />
-
         <Route exact path="/LikedPosters" component={LikedPosters} />
 
         <Route exact path="/Cart" component={Cart} />
