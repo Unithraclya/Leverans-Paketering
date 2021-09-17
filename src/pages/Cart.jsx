@@ -8,6 +8,8 @@ import CartStyle from '../css/Cart.module.css'
 import CartAddress from '../components/CartAddressForm';
 import CartShipping from '../components/CartShippingForm';
 import CartPayment from '../components/CartPaymentForm';
+import CartProduct from '../components/CartProductForm';
+
 
 export default function Cart() {
     
@@ -16,6 +18,8 @@ export default function Cart() {
 
     return (
 <div className={CartStyle.cart}>   
+        {/*Products */}
+        <CartProduct/>
 
         {/*Address */}
         <h3 className={CartStyle.Title}>Address</h3>
@@ -32,7 +36,7 @@ export default function Cart() {
          {/*Total */}
         
         <div className={CartStyle.Total}>
-            <p className={CartStyle.TotalSum}>Total 130 sek</p>
+            <p className={CartStyle.TotalSum}>Total 139 sek</p>
             <p>Included VAT</p>
 
             <button className={CartStyle.Totalbutton}>Complete purchase</button>
