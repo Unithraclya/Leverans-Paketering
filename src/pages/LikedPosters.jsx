@@ -4,6 +4,7 @@ import CartIcon from '../icons/cartfilled36dp.svg'
 
 export default function LikedPosters() {
     return (
+        <>
         <div className={styles.mainContainer}>
             <div className={styles.header}>
                 <h1 className={styles.heading}>Önskelista</h1>
@@ -191,7 +192,10 @@ export default function LikedPosters() {
                     </div>
                 </div>             
            </div>
+           
         </div>
+         
+         </>
     )
 
 }
