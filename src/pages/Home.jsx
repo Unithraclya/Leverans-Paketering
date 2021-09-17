@@ -4,6 +4,7 @@ import CartIcon from '../icons/cartfilled36dp.svg'
 
 export default function Home() {
     return (
+
         <div className={styles.mainContainer}>
             <div className={styles.header}>
                 <p>Free shipping over 500kr!</p>
@@ -39,6 +40,7 @@ export default function Home() {
                                 
            </div>
            <div className={styles.image}></div>
+
         </div>
 
         
