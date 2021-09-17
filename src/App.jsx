@@ -10,7 +10,7 @@ import Confirmation from './pages/Confirmation';
 import Nav from './components/Nav';
 import Error404 from './pages/Error404';
 import Banner from './components/Banner';
-
+import Footer from './components/Footer'
 
 export default function App() {
 
@@ -40,6 +40,8 @@ export default function App() {
         <Route exact path="*" component={Error404} />
 
       </Switch>
+
+      <Footer/>
       
     </div>
   )
