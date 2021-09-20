@@ -16,7 +16,7 @@ Login(details);
 }
 
     return (
-      <form onSubmit={submitHandler}>
+      <div className="form" onSubmit={submitHandler}>
           <div className="form-inner">
               <h2>Login</h2>
               {(error != "") ? ( <div className="error">{error}</div>) : ""}
@@ -34,7 +34,7 @@ Login(details);
               </div>
               <input type="submit" value="LOGIN" />
           </div>
-      </form>
+      </div>
     )
 }
 
