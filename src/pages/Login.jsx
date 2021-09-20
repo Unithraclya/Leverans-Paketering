@@ -34,7 +34,7 @@ export default function Login() {
     
     
     return (
-        <div className={Login}>
+        <div className="Login">
             {(user.email != "") ? (
                 <div className="welcome">
                     <h2>Welcome, <span>{user.name}</span></h2>
