@@ -10,17 +10,17 @@ export default function CartAddressForm() {
             className={CartStyle.FormGridEmail}
             name="email" 
             label='Email'
-            placeholder='E-mail'
+            placeholder='E-post'
             type='email'
         />
         <div className={CartStyle.FormGridText}>
-        <span>If you're already a customer</span><Link to="/Login" className={CartStyle.Sign}>Sign in here.</Link>
+        <span>Om du redan är kund</span><Link to="/Login" className={CartStyle.Sign}>Logga in här.</Link>
         </div>
         <input 
             className={CartStyle.FormGridMobile}
             name='mobile' 
             label='Mobile' 
-            placeholder='Mobile'
+            placeholder='Mobil'
             type='tel'
 
         />
@@ -28,21 +28,21 @@ export default function CartAddressForm() {
             className={CartStyle.FormGridFirst}
             name='first name'
             label='First Name' 
-            placeholder='First Name'
+            placeholder='Namn'
             type='text'  
         />
         <input 
             className={CartStyle.FormGridLast}
             name='last name'
             label='Last Name' 
-            placeholder='Last Name'
+            placeholder='Efternamn'
             type='text'  
         />
         <input 
             className={CartStyle.FormGridAddress}
             name='address'
             label='Address' 
-            placeholder='Address'
+            placeholder='Adress'
             type='text'  
         />
 
@@ -50,7 +50,7 @@ export default function CartAddressForm() {
             className={CartStyle.FormGridAddressPCode}
             name='postcode'
             label='Postcode' 
-            placeholder='Postcode'
+            placeholder='Postnummer'
             type='text'  
         />
 
@@ -58,7 +58,7 @@ export default function CartAddressForm() {
             className={CartStyle.FormGridAddressCity}
             name='city'
             label='City' 
-            placeholder='Town/City'
+            placeholder='Postort'
             type='text'  
         />
         </div>
