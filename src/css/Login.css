@@ -16,12 +16,12 @@
 }
 
 .Login{
-   margin-bottom: 200px;
+    margin-bottom: 200px;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #91bce5;
+    background-image: linear-gradient(to bottom right, #91bce5, #FFCD4D);
 }
 
 
@@ -35,12 +35,14 @@
     bottom: -5px;
     z-index: 1;
     background-image: linear-gradient(to bottom right, #FFCD4D, #FE4880);
+    
 
 }
 
 .form .form-inner {
     position: relative;
     display: block;
+    /*background-image: linear-gradient(to bottom right, #FFCD4D, #FE4880);*/
     background-color: #FFF;
     padding: 30px;
     z-index: 2;
@@ -89,7 +91,7 @@
     display: inline-block;
     padding: 10px 15px;
     border-radius: 8px;
-    background-image: linear-gradient(to right,  50%, #FFCD4D 50%, #FE4880);
+    background-color: #FE4880;
     background-size: 200%;
     background-position: 0%;
     transition: 0.5s;
