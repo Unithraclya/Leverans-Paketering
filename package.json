@@ -4,13 +4,17 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "start": "concurrently npm:backend npm:dev",
+    "backend": "nodemon backend/index"
+
   },
   "dependencies": {
     "@fortawesome/free-regular-svg-icons": "^5.15.4",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/react-fontawesome": "^0.1.15",
     "better-sqlite3": "^7.4.3",
+    "concurrently": "^6.2.1",
     "express": "^4.17.1",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",

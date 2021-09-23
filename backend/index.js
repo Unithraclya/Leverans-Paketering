@@ -7,7 +7,7 @@ const { O_DIRECT } = require('constants');
 const app = express();
 
 // ask the web server to serve files from the frontend files
-app.use(express.static(path.join(__dirname, '../frontend')));
+app.use(express.static(path.join(__dirname, '../dist')));
 
 // tell the server that it should be able to read request bodies
 app.use(express.json());
