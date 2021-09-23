@@ -13,7 +13,7 @@ app.use(express.static(path.join(__dirname, '../dist')));
 app.use(express.json());
 
 // create a connection to the database
-const db = new sqlDriver('../dbse/sqlite3.db');
+const db = new sqlDriver('./dbse/sqlite3.db');
 
 // Get/read all users
 app.get('/api/users', (req, res) => {
