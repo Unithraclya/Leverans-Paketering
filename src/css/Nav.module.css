@@ -29,9 +29,11 @@
   position: fixed;
   top: 0%;
   bottom: 0%;
+  left: 0%;
   background: #fffffffa;
   margin: auto;
   width: 100%;
+  z-index: 5;
 }
 
 /* Style the Nav menu */
@@ -95,7 +97,7 @@
 .center {
   width: 28px;
   grid-column: 2;
-  z-index: 2;
+  z-index: 6;
 }
 
 .center:before,

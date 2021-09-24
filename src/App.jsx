@@ -8,15 +8,22 @@ import PosterPage from './pages/PosterPage';
 import Login from './pages/Login';
 import Confirmation from './pages/Confirmation';
 import Nav from './components/Nav';
+
+import LoginForm from './components/LoginForm';
+
+
 import Error404 from './pages/Error404';
 import Banner from './components/Banner';
 import Footer from './components/Footer'
 
-export default function App() {
 
+
+export default function App() {
+  
 
   return (
     <div className="App">
+      
 
       <Nav/>
       <Banner />
@@ -25,8 +32,6 @@ export default function App() {
 
         <Route exact path="/" component={Home} />
       
-        <Route exact path="/Nav" component={Nav} />
-
         <Route exact path="/LikedPosters" component={LikedPosters} />
 
         <Route exact path="/Cart" component={Cart} />
@@ -41,7 +46,8 @@ export default function App() {
 
       </Switch>
 
-      <Footer/>
+   <Footer/>
+
       
     </div>
   )

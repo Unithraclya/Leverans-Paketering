@@ -25,6 +25,11 @@ export default function Home() {
 
     return (
 
+        <div>
+            
+            
+
+
         <div className={styles.mainContainer}>
             <div className={styles.header}>
                 <p>Free shipping over 500kr!</p>
@@ -55,6 +60,7 @@ export default function Home() {
                     
                       
            </div>
+
             <div className = "posterProducts">
            <PosterInfo 
             PosterInfo={PosterInfo}
@@ -62,5 +68,6 @@ export default function Home() {
             />
             </div>
         </div>        
+
     )
 }
