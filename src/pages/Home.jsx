@@ -24,6 +24,7 @@ export default function Home() {
     }
 
     return (
+
         <div className={styles.mainContainer}>
             <div className={styles.header}>
                 <p>Free shipping over 500kr!</p>
