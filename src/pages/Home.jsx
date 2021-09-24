@@ -1,8 +1,28 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import styles from '../css/Home.module.css'
 import CartIcon from '../icons/cartfilled36dp.svg'
+import PosterInfo from './PosterInfo'
 
 export default function Home() {
+
+    const [setPosterInfo] = useState([]);
+    useEffect(() => {
+        fetchPosterInfo();
+    }, [])
+
+    const fetchPosterInfo = async () => {
+        try {
+            const response = await fetch (null);
+            if (!response.ok) {
+                throw new Error ('HTTP Error! status: ' + response.status);
+            }
+            const data = await response.json();
+            setPosterInfo(data); 
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     return (
 
         <div>
@@ -19,8 +39,7 @@ export default function Home() {
                     <div className={styles.top}>
                     </div>
                     <div className={styles.btns}>
-                      {/*  CATEGORY BUTTON  */}
-                    <div className={styles.dropdown}>
+                    <div className={styles.dropdown}> {/*  CATEGORY BUTTON  */}
                         <button className={styles.dropbtn}>Category ▼</button>
                         <div className={styles.dropdownContent}>
                             <a className={styles.a}href="#">Animals</a>
@@ -30,10 +49,7 @@ export default function Home() {
                         </div>
                         </div>
                         </div>
-                    
-                        {/*  PRICE BUTTON  */}
-                        
-                    <div className={styles.dropdown}>
+                    <div className={styles.dropdown}>{/*  PRICE BUTTON  */}
                         <button className={styles.dropbtn}>Price ▼</button>
                         <div className={styles.dropdownContent}>
                             <a className={styles.a}href="#">0KR - 200KR</a>
@@ -42,14 +58,16 @@ export default function Home() {
                         </div>
                         
                     
-                                
+                      
            </div>
-           <div className={styles.image}></div>
 
+            <div className = "posterProducts">
+           <PosterInfo 
+            PosterInfo={PosterInfo}
+            pageId="Home"
+            />
+            </div>
+        </div>        
 
-        </div>
-        </div>
-        
     )
-
 }
