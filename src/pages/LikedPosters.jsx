@@ -9,9 +9,7 @@ import { faHeart, faComment } from "@fortawesome/free-regular-svg-icons";
 import Error404 from '../pages/Error404';
 
 export default function LikedPosters() {
-    
 
- 
 
    
     return (
@@ -31,7 +29,88 @@ export default function LikedPosters() {
                             <FontAwesomeIcon className={styles.heart} icon={solidHeart}/>
                         </div>  
                     </div>                         
-                </div> 
+                    <div className={styles.item}>
+                        <div className={styles.image}><img className={styles.img} src={poster2} alt="" /></div>
+                        <div className={styles.top}>
+                            <div className={styles.info}>
+                                <p>En tavla<br/>Från 0 kr</p>
+                            </div>
+                            <FontAwesomeIcon className={styles.heart} icon={solidHeart}/>
+                        </div>  
+                    </div>                         
+                    <div className={styles.item}>
+                        <div className={styles.image}><img className={styles.img} src={poster2} alt="" /></div>
+                        <div className={styles.top}>
+                            <div className={styles.info}>
+                                <p>En tavla<br/>Från 0 kr</p>
+                            </div>
+                            <FontAwesomeIcon className={styles.heart} icon={solidHeart}/>
+                        </div>  
+                    </div>                         
+                    <div className={styles.item}>
+                        <div className={styles.image}><img className={styles.img} src={poster2} alt="" /></div>
+                        <div className={styles.top}>
+                            <div className={styles.info}>
+                                <p>En tavla<br/>Från 0 kr</p>
+                            </div>
+                            <FontAwesomeIcon className={styles.heart} icon={solidHeart}/>
+                        </div>  
+                    </div>                         
+                    <div className={styles.item}>
+                        <div className={styles.image}><img className={styles.img} src={poster2} alt="" /></div>
+                        <div className={styles.top}>
+                            <div className={styles.info}>
+                                <p>En tavla<br/>Från 0 kr</p>
+                            </div>
+                            <FontAwesomeIcon className={styles.heart} icon={solidHeart}/>
+                        </div>  
+                    </div>                         
+                    <div className={styles.item}>
+                        <div className={styles.image}><img className={styles.img} src={poster2} alt="" /></div>
+                        <div className={styles.top}>
+                            <div className={styles.info}>
+                                <p>En tavla<br/>Från 0 kr</p>
+                            </div>
+                            <FontAwesomeIcon className={styles.heart} icon={solidHeart}/>
+                        </div>  
+                    </div>                         
+                    <div className={styles.item}>
+                        <div className={styles.image}><img className={styles.img} src={poster2} alt="" /></div>
+                        <div className={styles.top}>
+                            <div className={styles.info}>
+                                <p>En tavla<br/>Från 0 kr</p>
+                            </div>
+                            <FontAwesomeIcon className={styles.heart} icon={solidHeart}/>
+                        </div>  
+                    </div>                         
+                    <div className={styles.item}>
+                        <div className={styles.image}><img className={styles.img} src={poster2} alt="" /></div>
+                        <div className={styles.top}>
+                            <div className={styles.info}>
+                                <p>En tavla<br/>Från 0 kr</p>
+                            </div>
+                            <FontAwesomeIcon className={styles.heart} icon={solidHeart}/>
+                        </div>  
+                    </div>                         
+                    <div className={styles.item}>
+                        <div className={styles.image}><img className={styles.img} src={poster2} alt="" /></div>
+                        <div className={styles.top}>
+                            <div className={styles.info}>
+                                <p>En tavla<br/>Från 0 kr</p>
+                            </div>
+                            <FontAwesomeIcon className={styles.heart} icon={solidHeart}/>
+                        </div>  
+                    </div>                         
+                    <div className={styles.item}>
+                        <div className={styles.image}><img className={styles.img} src={poster2} alt="" /></div>
+                        <div className={styles.top}>
+                            <div className={styles.info}>
+                                <p>En tavla<br/>Från 0 kr</p>
+                            </div>
+                            <FontAwesomeIcon className={styles.heart} icon={solidHeart}/>
+                        </div>  
+                    </div>                         
+                </div>                         
             </div>
         </>
     )
