@@ -48,69 +48,6 @@
     font-size: 23px;
 }
 
-.btns{
-    width: 250px;
-    height: 120px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.dropbtn {
-    background-color: #ffffff;
-    border: 1px solid rgba(0, 0, 0, 0.24) !important;
-    cursor: pointer;
-
-    color: black;
-    padding: 16px;
-    font-size: 16px;
-    width: 250px;
-    height: 50px;
-    border: none;
-  }
-  
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  
-  .dropdownContent {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    width: 250px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-  
-  .dropdownContent .a {
-    color: black;
-    width: 250px;
-    padding: 12px 1px;
-    text-decoration: none;
-    display: block;
-  }
-  
-  .dropdownContent .a:hover {background-color: #ddd;}
-  
-  .dropdown:hover .dropdownContent {display: block;}
-  
-  .dropdown:hover .dropbtn {background-color: #ffffff;}
-
-
-.btn{
-    width: 250px;
-    height: 50px;
-    border: none;
-    background-color: #ffd000; 
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-}
-.btn:hover{
-    background-color: #ffae00; 
-}
 
 
 @media screen and (max-width: 320px){
