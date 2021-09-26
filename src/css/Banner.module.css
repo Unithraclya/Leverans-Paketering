@@ -1,8 +1,8 @@
 .banner{
     width: 100vw;
-    height: 7vh;
+    height: max-content;
     background: rgb(255, 207, 50);
-    top: 6.5vh;
+    top: 6vh;
     position: absolute;
     display: flex;
     justify-content: center;
@@ -12,5 +12,6 @@
 
 .text{
     text-align: center;
+    font-size: 14px;
 
 }
