@@ -21,8 +21,8 @@ export default function CartPaymentForm() {
             
           />
          <img src={Swish} alt = 'Swish'/>
-         <label className={CartStyle.ShippingInfo} htmlFor="PostNordV"><span>Swish</span></label>
-         <span className={CartStyle.ShippingPay}>0 sek</span>
+         <label className={CartStyle.ShippingInfo} htmlFor="Swish"><span>Swish</span></label>
+         <span className={CartStyle.ShippingPay}>0 kr</span>
        
          </div>
          <div className={CartStyle.ContentsPostNO}> 
@@ -30,37 +30,37 @@ export default function CartPaymentForm() {
          <input
              name='Payment' 
              type='radio'
-             value='PostNordO'
+             value='Faktura'
             
           />
           
-         <img src={Faktura} alt = 'Postnord Ombud'/>
-         <label className={CartStyle.ShippingInfo} htmlFor="PostNordO"><span>Postnord Ombud</span></label>
-         <span className={CartStyle.ShippingFree}>Fri frakt</span>
+         <img src={Faktura} alt = 'Faktura'/>
+         <label className={CartStyle.ShippingInfo} htmlFor="Faktura"><span>Faktura</span></label>
+         <span className={CartStyle.ShippingPay}>20 kr</span>
           </div>
           
           <div className={CartStyle.ContentsBud}> 
          <input
              name='Payment' 
              type='radio'
-             value='Budbee'
+             value='BankID'
             
           />
-         <img src={BankID} alt = 'Budbee Shipping'/>
-         <label className={CartStyle.ShippingInfo} htmlFor="Budbee"><span>Budbee</span></label>
-         <span className={CartStyle.ShippingFree}>Fri Frakt</span>
+         <img src={BankID} alt = 'BankID'/>
+         <label className={CartStyle.ShippingInfo} htmlFor="BankID"><span>BankID</span></label>
+         <span className={CartStyle.ShippingPay}>0 kr</span>
           </div>
           
           <div className={CartStyle.ContentsInsta}> 
          <input
-             name='Payment' 
+             name='Kort' 
              type='radio'
-             value='Instabox'
+             value='Kort'
             
           />
-         <img src={Card} alt = 'Instabox Shipping'/>
-         <label className={CartStyle.ShippingInfo} htmlFor="Instabox"><span>Instabox</span></label>
-         <span className={CartStyle.ShippingFree}>Fri Frakt</span>
+         <img src={Card} alt = 'Kort betalning'/>
+         <label className={CartStyle.ShippingInfo} htmlFor="Kort"><span>Kortbetalning</span></label>
+         <span className={CartStyle.ShippingPay}>0 kr</span>
  
           </div>
  
@@ -68,12 +68,12 @@ export default function CartPaymentForm() {
          <input
              name='Payment' 
              type='radio'
-             value='DHL'
+             value='PayPal'
             
           />
-         <img src={PayPal} alt = 'DHL Shipping'/>
-         <label className={CartStyle.ShippingInfo} htmlFor="DHL"><span>DHL</span></label>
-         <span className={CartStyle.ShippingPay}>40 sek</span>
+         <img src={PayPal} alt = 'PayPal'/>
+         <label className={CartStyle.ShippingInfo} htmlFor="PayPal"><span>PayPal</span></label>
+         <span className={CartStyle.ShippingPay}>20 sek</span>
  
           </div>
           </div>

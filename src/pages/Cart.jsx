@@ -22,27 +22,26 @@ export default function Cart() {
         <CartProduct/>
 
         {/*Address */}
-        <h3 className={CartStyle.Title}>Address</h3>
+        <h3 className={CartStyle.Title}>Adress</h3>
         <CartAddress/>
 
         {/*Shipping */}
-        <h3 className={CartStyle.Title}>Shipping</h3>
+        <h3 className={CartStyle.Title}>Frakt</h3>
         <CartShipping/>
       
         {/*Payment */}
-        <h3 className={CartStyle.Title}>Payment</h3>
+        <h3 className={CartStyle.Title}>Betalning</h3>
         <CartPayment/>
 
          {/*Total */}
         
         <div className={CartStyle.Total}>
-            <p className={CartStyle.TotalSum}>Total 139 sek</p>
-            <p>Included VAT</p>
+            <p className={CartStyle.TotalSum}>Summa 139 kr</p>
+            <p>Inkl. moms</p>
 
-            <button className={CartStyle.Totalbutton}>Complete purchase</button>
+            <button className={CartStyle.Totalbutton}>Slutför köp</button>
         </div>
     
-        <p>Footer component</p>
  </div>
     )
 }

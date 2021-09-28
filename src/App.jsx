@@ -6,6 +6,7 @@ import LikedPosters from './pages/LikedPosters';
 import Cart from './pages/Cart';
 import PosterPage from './pages/PosterPage';
 import Login from './pages/Login';
+import CreateAccount from './pages/CreateAccount';
 import Confirmation from './pages/Confirmation';
 import Nav from './components/Nav';
 
@@ -40,6 +41,8 @@ export default function App() {
 
         <Route exact path="/Login" component={Login} />
 
+        <Route exact path="/CreateAccount" component={CreateAccount} />
+        
         <Route exact path="/Confirmation" component={Confirmation} />
 
         <Route exact path="*" component={Error404} />

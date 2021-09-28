@@ -51,9 +51,9 @@ export default function Nav() {
      
      <ul 
         className={NavStyle.Links} >
-        <Link to="/" className={NavStyle.Link}>Home</Link>
-        <Link to="/CreateAccount"className={NavStyle.Link}>Create Account</Link>
-        <Link to="/Login" className={NavStyle.Link}>Sign in</Link>
+        <Link to="/" className={NavStyle.Link}>Hem</Link>
+        <Link to="/CreateAccount"className={NavStyle.Link}>Skapa Konto</Link>
+        <Link to="/Login" className={NavStyle.Link}>Logga in</Link>
      </ul>
    </div>
      

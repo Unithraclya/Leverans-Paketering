@@ -21,7 +21,7 @@ export default function CartShippingForm() {
          />
         <img src={PostNord} alt = 'PostNord'/>
         <label className={CartStyle.ShippingInfo} htmlFor="PostNordV"><span>Postnord varubrev</span></label>
-        <span className={CartStyle.ShippingPay}>20 sek</span>
+        <span className={CartStyle.ShippingPay}>20 kr</span>
       
         </div>
         <div className={CartStyle.ContentsPostNO}> 
@@ -72,7 +72,7 @@ export default function CartShippingForm() {
          />
         <img src={DHL} alt = 'DHL Shipping'/>
         <label className={CartStyle.ShippingInfo} htmlFor="DHL"><span>DHL</span></label>
-        <span className={CartStyle.ShippingPay}>40 sek</span>
+        <span className={CartStyle.ShippingPay}>40 kr</span>
 
          </div>
          </div>
