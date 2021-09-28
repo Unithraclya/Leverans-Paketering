@@ -9,8 +9,6 @@ import { faHeart, faComment } from "@fortawesome/free-regular-svg-icons";
 import Error404 from '../pages/Error404';
 
 export default function LikedPosters() {
-
-
    
     return (
         <>
@@ -113,6 +111,7 @@ export default function LikedPosters() {
                 </div>                         
             </div>
         </>
+  
     )
 
 }
