@@ -7,28 +7,44 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faTimes, faHeart as solidHeart} from "@fortawesome/free-solid-svg-icons";
 import { faHeart, faComment } from "@fortawesome/free-regular-svg-icons";
 
+
 export default function Home() {
+    const [posters, setPosters] = useState([]);
 
-    const [setPosterInfo] = useState([]);
+
     useEffect(() => {
-        fetchPosterInfo();
-    }, [])
+        (async () => {
+          //fetch all users
+          setPosters(await(await fetch('/api/posters')).json());
+        })();
+      }, []);
 
-    const fetchPosterInfo = async () => {
-        try {
-            const response = await fetch (null);
-            if (!response.ok) {
-                throw new Error ('HTTP Error! status: ' + response.status);
-            }
-            const data = await response.json();
-            setPosterInfo(data); 
-        } catch (error) {
-            console.log(error);
-        }
-    }
+    // const [setPosterInfo] = useState([]);
+    // useEffect(() => {
+    //     fetchPosterInfo();
+    // }, [])
+
+    // const fetchPosterInfo = async () => {
+    //     try {
+    //         const response = await fetch ('/api/posters');
+    //         if (!response.ok) {
+    //             throw new Error ('HTTP Error! status: ' + response.status);
+    //         }
+    //         const data = await response.json();
+    //         setPosterInfo(data); 
+    //     } catch (error) {
+    //         console.log(error);
+    //     }
+    // }
+
+    
 
     return (
-        <div className={styles.mainContainer}>
+       
+      
+       <div className={styles.mainContainer}>
+          
+        
             <div className={styles.header}>
                 <p>Fri leverans vid köp över 500 kr</p>
                 <div className={styles.btns}>
@@ -50,82 +66,98 @@ export default function Home() {
                     </div>
                 </div>
             </div>
+           
+         
+            {posters.map(({id, name, description, price, image}) => 
+            
+            <div key={id}>
+            {/* <h2>{name}</h2>
+            <h3>{description}</h3>
+            <h3>{price}</h3>
+            <img src={image}></img> */}
+            
+    
+       
 
-            <div className={styles.items}>
+            <div className={styles.items} key={id}>
                 <div className={styles.item}>
-                    <div className={styles.image}><img className={styles.img} src={poster2} alt="" /></div>
+                    <div className={styles.image}><img className={styles.img} src={image} alt="horse" /></div>
                     <div className={styles.top}>
                         <div className={styles.info}>
-                            <p>En tavla<br/>Från 0 kr</p>
+                            <p>{name} Poster {description} <br/> Från {price} kr</p>
                         </div>
                         <FontAwesomeIcon className={styles.heart} icon={solidHeart}/>
                     </div>  
                 </div>                         
-                <div className={styles.item}>
-                    <div className={styles.image}><img className={styles.img} src={poster2} alt="" /></div>
+                <div className={styles.item} key={id}>
+                    <div className={styles.image}><img className={styles.img} src={image} alt="Animal 2" /></div>
                     <div className={styles.top}>
                         <div className={styles.info}>
-                            <p>En tavla<br/>Från 0 kr</p>
+                        <p>{name} Poster {description} <br/> Från {price} kr</p>
                         </div>
                         <FontAwesomeIcon className={styles.heart} icon={solidHeart}/>
                     </div>  
                 </div>                         
-                <div className={styles.item}>
-                    <div className={styles.image}><img className={styles.img} src={poster2} alt="" /></div>
+                <div className={styles.item} key={id}>
+                    <div className={styles.image}><img className={styles.img} src={image} alt="" /></div>
                     <div className={styles.top}>
                         <div className={styles.info}>
-                            <p>En tavla<br/>Från 0 kr</p>
+                        <p>{name} Poster {description} <br/> Från {price} kr</p>
                         </div>
                         <FontAwesomeIcon className={styles.heart} icon={faHeart}/>
                     </div>  
                 </div>                         
-                <div className={styles.item}>
-                    <div className={styles.image}><img className={styles.img} src={poster2} alt="" /></div>
+                <div className={styles.item} key={id}>
+                    <div className={styles.image}><img className={styles.img} src={image} alt="" /></div>
                     <div className={styles.top}>
                         <div className={styles.info}>
-                            <p>En tavla<br/>Från 0 kr</p>
+                        <p>{name} Poster {description} <br/> Från {price} kr</p>
                         </div>
                         <FontAwesomeIcon className={styles.heart} icon={faHeart}/>
                     </div>  
                 </div>                         
-                <div className={styles.item}>
-                    <div className={styles.image}><img className={styles.img} src={poster2} alt="" /></div>
+                <div className={styles.item} key={id}>
+                    <div className={styles.image}><img className={styles.img} src={image} alt="" /></div>
                     <div className={styles.top}>
                         <div className={styles.info}>
-                            <p>En tavla<br/>Från 0 kr</p>
+                        <p>{name} Poster {description} <br/> Från {price} kr</p>
                         </div>
                         <FontAwesomeIcon className={styles.heart} icon={faHeart}/>
                     </div>  
                 </div>                         
-                <div className={styles.item}>
-                    <div className={styles.image}><img className={styles.img} src={poster2} alt="" /></div>
+                <div className={styles.item} key={id}>
+                    <div className={styles.image}><img className={styles.img} src={image} alt="" /></div>
                     <div className={styles.top}>
                         <div className={styles.info}>
-                            <p>En tavla<br/>Från 0 kr</p>
+                        <p>{name} Poster {description} <br/> Från {price} kr</p>
                         </div>
                         <FontAwesomeIcon className={styles.heart} icon={faHeart}/>
                     </div>  
                 </div>                         
-                <div className={styles.item}>
-                    <div className={styles.image}><img className={styles.img} src={poster2} alt="" /></div>
+                <div className={styles.item} key={id}>
+                    <div className={styles.image}><img className={styles.img} src={image} alt="" /></div>
                     <div className={styles.top}>
                         <div className={styles.info}>
-                            <p>En tavla<br/>Från 0 kr</p>
+                        <p>{name} Poster {description} <br/> {id} Från {price} kr</p>
                         </div>
                         <FontAwesomeIcon className={styles.heart} icon={faHeart}/>
                     </div>  
                 </div>                         
-                <div className={styles.item}>
-                    <div className={styles.image}><img className={styles.img} src={poster2} alt="" /></div>
+                <div className={styles.item} key={id}>
+                    <div className={styles.image}><img className={styles.img} src={image} alt="" /></div>
                     <div className={styles.top}>
                         <div className={styles.info}>
-                            <p>En tavla<br/>Från 0 kr</p>
+                        <p>{name} Poster {description} <br/> Från {price} kr</p>
                         </div>
                         <FontAwesomeIcon className={styles.heart} icon={faHeart}/>
                     </div>  
                 </div>                                                 
             </div> 
+            
+          
+            </div>
+         ,console.log(posters))} 
         </div>        
-
+       
     )
 }
