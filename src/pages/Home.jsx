@@ -51,9 +51,9 @@ export default function Home() {
                     <div className={styles.dropdown}>
                         <button className={styles.dropbtn}>Kategori</button>
                         <div className={styles.dropdownContent}>
-                            <a className={styles.a}href="#">Hästar</a>
-                            <a className={styles.a}href="#">Hundar</a>
-                            <a className={styles.a}href="#">Katter</a>
+                            <a className={styles.a}href="#">Natur</a>
+                            <a className={styles.a}href="#">Djur</a>
+                            <a className={styles.a}href="#">Abstrakt</a>
                         </div>
                     </div>
                     <div className={styles.dropdown}>
