@@ -4,3 +4,4 @@ dist
 dist-ssr
 *.local
 db/*
+dbse/sqlite3.db
