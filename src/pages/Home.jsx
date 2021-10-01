@@ -82,8 +82,7 @@ export default function Home() {
                         </div>
                         <FontAwesomeIcon className={styles.heart} icon={solidHeart}/>
                     </div>  
-                </div>                         
-                                                              
+                </div>                                                                      
             </div> 
             
           
