@@ -80,7 +80,7 @@ export default function Home() {
                         <div className={styles.info}>
                             <p>{name} Poster {description} <br/> Från {price} kr</p>
                         </div>
-                        <FontAwesomeIcon className={styles.heart} icon={solidHeart}/>
+                        <FontAwesomeIcon className={styles.heart} icon={faHeart}/>
                     </div>  
                 </div>                                                                      
             </div> 
