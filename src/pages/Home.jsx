@@ -71,17 +71,11 @@ export default function Home() {
             {posters.map(({id, name, description, price, image}) => 
             
             <div key={id}>
-            {/* <h2>{name}</h2>
-            <h3>{description}</h3>
-            <h3>{price}</h3>
-            <img src={image}></img> */}
             
-    
-       
 
-            <div className={styles.items} key={id}>
+            <div className={styles.items} >
                 <div className={styles.item}>
-                    <div className={styles.image}><img className={styles.img} src={image} alt="horse" /></div>
+                    <div className={styles.image}><img className={styles.img} src={image} /></div>
                     <div className={styles.top}>
                         <div className={styles.info}>
                             <p>{name} Poster {description} <br/> Från {price} kr</p>
@@ -89,69 +83,7 @@ export default function Home() {
                         <FontAwesomeIcon className={styles.heart} icon={solidHeart}/>
                     </div>  
                 </div>                         
-                <div className={styles.item} key={id}>
-                    <div className={styles.image}><img className={styles.img} src={image} alt="Animal 2" /></div>
-                    <div className={styles.top}>
-                        <div className={styles.info}>
-                        <p>{name} Poster {description} <br/> Från {price} kr</p>
-                        </div>
-                        <FontAwesomeIcon className={styles.heart} icon={solidHeart}/>
-                    </div>  
-                </div>                         
-                <div className={styles.item} key={id}>
-                    <div className={styles.image}><img className={styles.img} src={image} alt="" /></div>
-                    <div className={styles.top}>
-                        <div className={styles.info}>
-                        <p>{name} Poster {description} <br/> Från {price} kr</p>
-                        </div>
-                        <FontAwesomeIcon className={styles.heart} icon={faHeart}/>
-                    </div>  
-                </div>                         
-                <div className={styles.item} key={id}>
-                    <div className={styles.image}><img className={styles.img} src={image} alt="" /></div>
-                    <div className={styles.top}>
-                        <div className={styles.info}>
-                        <p>{name} Poster {description} <br/> Från {price} kr</p>
-                        </div>
-                        <FontAwesomeIcon className={styles.heart} icon={faHeart}/>
-                    </div>  
-                </div>                         
-                <div className={styles.item} key={id}>
-                    <div className={styles.image}><img className={styles.img} src={image} alt="" /></div>
-                    <div className={styles.top}>
-                        <div className={styles.info}>
-                        <p>{name} Poster {description} <br/> Från {price} kr</p>
-                        </div>
-                        <FontAwesomeIcon className={styles.heart} icon={faHeart}/>
-                    </div>  
-                </div>                         
-                <div className={styles.item} key={id}>
-                    <div className={styles.image}><img className={styles.img} src={image} alt="" /></div>
-                    <div className={styles.top}>
-                        <div className={styles.info}>
-                        <p>{name} Poster {description} <br/> Från {price} kr</p>
-                        </div>
-                        <FontAwesomeIcon className={styles.heart} icon={faHeart}/>
-                    </div>  
-                </div>                         
-                <div className={styles.item} key={id}>
-                    <div className={styles.image}><img className={styles.img} src={image} alt="" /></div>
-                    <div className={styles.top}>
-                        <div className={styles.info}>
-                        <p>{name} Poster {description} <br/> {id} Från {price} kr</p>
-                        </div>
-                        <FontAwesomeIcon className={styles.heart} icon={faHeart}/>
-                    </div>  
-                </div>                         
-                <div className={styles.item} key={id}>
-                    <div className={styles.image}><img className={styles.img} src={image} alt="" /></div>
-                    <div className={styles.top}>
-                        <div className={styles.info}>
-                        <p>{name} Poster {description} <br/> Från {price} kr</p>
-                        </div>
-                        <FontAwesomeIcon className={styles.heart} icon={faHeart}/>
-                    </div>  
-                </div>                                                 
+                                                              
             </div> 
             
           

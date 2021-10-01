@@ -63,14 +63,14 @@ export default function CreateAccount() {
           <input type="submit" onClick={addUser} value="Skapa konto" />
         </form>
 
-         {users.map(({id, name, mail, password})=> 
+         {/* {users.map(({id, name, mail, password})=> 
             <div key={id}>
             <h2>{name}</h2>
             <h3>{mail}</h3>
             <h3>{password}</h3>
         
         </div>
-         )} 
+         )}  */}
     </div>
   )
 }
