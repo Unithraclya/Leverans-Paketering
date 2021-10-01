@@ -17,7 +17,7 @@ app.use(express.json());
 
 // create a connection to the database
 // const db = new sqlDriver('./dbse/sqlite3.db');
-const db = new sqlDriver('./dbse/sqlite3.db');
+const db = new sqlDriver(path.join(__dirname,'../dbse/sqlite3.db'));
 
 
 
