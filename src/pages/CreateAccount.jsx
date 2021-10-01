@@ -1,5 +1,6 @@
 import React, {useState, useEffect, useRef} from 'react'
 import { useHistory } from "react-router-dom";
+import {Link} from 'react-router-dom';
 
 //Styles
 import CrAccStyle from '../css/CreateAccount.module.css'
@@ -58,22 +59,25 @@ export default function CreateAccount() {
   return (
     <div className={CrAccStyle.Form}>
          
-         <form>
-       <input type="text" onChange={e => setName(e.target.value)} placeholder="Namn"/>
-       <input type="text" onChange={e => setMail(e.target.value)} placeholder="Mail"/>
-       <input type="text" onChange={e => setPassword(e.target.value)} placeholder="password"/>
+         <form className={CrAccStyle.InlineForm}>
+       <input type="text" className={CrAccStyle.Name} onChange={e => setName(e.target.value)} placeholder="Namn"/>
+       <input type="text" className={CrAccStyle.Mail}onChange={e => setMail(e.target.value)} placeholder="Mail"/>
+       <input type="text" className={CrAccStyle.Password}onChange={e => setPassword(e.target.value)} placeholder="password"/>
 
-          <input type="submit" onClick={addUser} value="Skapa konto" />
-        </form>
+          <input type="submit" className={CrAccStyle.Submit} onClick={addUser} value="Skapa konto" />
+          <Link to="/" className={CrAccStyle.Cancel}> <label type="text">Avbryt</label></Link>
+          
+       
+       </form>
 
-        {users.map(({id, name, mail, password})=> 
+        {/* {users.map(({id, name, mail, password})=> 
             <div key={id}>
             <h2>{name}</h2>
             <h3>{mail}</h3>
             <h3>{password}</h3>
         
         </div>
-         ,console.log(users))}  
+         ,console.log(users))}   */}
     </div>
   )
 }
