@@ -57,7 +57,7 @@ export default function CreateAccount() {
 
 
   return (
-    <div className={CrAccStyle.Form}>
+    <div className={CrAccStyle.Form} onSubmit={addUser}>
          
          <form className={CrAccStyle.InlineForm}>
        <input type="text" className={CrAccStyle.Name} onChange={e => setName(e.target.value)} placeholder="Namn"/>
