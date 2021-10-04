@@ -19,19 +19,19 @@ export default function CreateAccount() {
 
   //fetch all users
 
-  useEffect(() => {
-    (async () => {
-      //fetch all users
-      setUser(await(await fetch('api/users')).json());
-    })();
-  }, []);
+  // useEffect(() => {
+  //   (async () => {
+  //     //fetch all users
+  //     setUser(await(await fetch('api/users')).json());
+  //   })();
+  // }, []);
 
  
 
   async function addUser(e) {
     e.preventDefault();
 
-    let result = await fetch('/api/users', {
+    let result = await simpleFetch('/api/users', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name, mail, password })

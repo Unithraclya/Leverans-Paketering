@@ -1,4 +1,6 @@
 .Form {
+  width: 90%;
+  margin: auto;
   display: grid;
   margin-top: 100px;
   margin-bottom: 340px;
