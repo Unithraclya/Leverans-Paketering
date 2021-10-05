@@ -9,6 +9,7 @@ import Login from './pages/Login';
 import CreateAccount from './pages/CreateAccount';
 import Confirmation from './pages/Confirmation';
 import Nav from './components/Nav';
+import Search from './components/Search';
 
 import LoginForm from './components/LoginForm';
 
@@ -36,6 +37,8 @@ export default function App() {
         <Route exact path="/LikedPosters" component={LikedPosters} />
 
         <Route exact path="/Cart" component={Cart} />
+
+        <Route exact path="/Search" component={Search} />
 
         <Route exact path="/PosterPage" component={PosterPage} />
 
