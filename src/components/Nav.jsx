@@ -7,6 +7,7 @@ import {Link} from 'react-router-dom';
 import SearchIcon from '../icons/search36dp.svg'
 import HeartIcon from '../icons/heart36dp.svg'
 import CartIcon from '../icons/cartfilled36dp.svg'
+import Search from './Search';
 
 
 
@@ -71,7 +72,7 @@ export default function Nav() {
   </div> 
  
 
-            <Link to="/Search" className ={NavStyle.SearchIcon}><img src={SearchIcon} alt = 'Search' /></Link>
+            <div className ={NavStyle.SearchIcon} onClick={() => <Search />} ><img src={SearchIcon} alt = 'Search' /></div>
             <Link to="/" className={NavStyle.CompanyText}>POSTERGANG.COM </Link>
             <Link to="/LikedPosters"className ={NavStyle.HeartIcon}><img src={HeartIcon} alt = 'Like'/></Link>
             <Link to="/Cart"className ={NavStyle.CartIcon}><img src={CartIcon} alt = 'Cart'/></Link>
