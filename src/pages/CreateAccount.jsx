@@ -11,10 +11,10 @@ async function simpleFetch(url, settings) {
 }
 
 export default function CreateAccount() {
-  const [users, setUser] = useState([]);
-  const [name, setName] = useState('');
-  const [mail, setMail] = useState('');
-  const [password, setPassword] = useState('');
+  const [user, setUser] = useState([]);
+  const [nameReg, setName] = useState('');
+  const [mailReg, setMail] = useState('');
+  const [passwordReg, setPassword] = useState('');
 
 
   //fetch all users
@@ -28,16 +28,40 @@ export default function CreateAccount() {
 
  
 
-  async function addUser(e) {
+  const register = async function(e) {
+    console.log("Form submitted");
     e.preventDefault();
 
-    let result = await simpleFetch('/api/users', {
+      await fetch('/api/users', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, mail, password })
-    });
-    return result;
+     
+      body: JSON.stringify({ 
+         name:nameReg,
+         mail:mailReg,
+         password:passwordReg }   ,console.log(mailReg))
+       
+      
+    },
+    {withCredentials:true}
+   
+
+    ).then((res) => {
+      console.log(res);
+      return res.json();
+    })
+    .then((res) => {
+     console.log('Printing out json'); 
+     console.log(res);
+  })
+  .catch((err) => {
+      console.log(err);
+  });
+
+ [];
+
   }
+
   
 
   // A working fetch all users 
@@ -57,14 +81,32 @@ export default function CreateAccount() {
 
 
   return (
-    <div className={CrAccStyle.Form} onSubmit={addUser}>
+    <div className={CrAccStyle.Form} onSubmit={register}>
          
-         <form className={CrAccStyle.InlineForm}>
-       <input type="text" className={CrAccStyle.Name} onChange={e => setName(e.target.value)} placeholder="Namn"/>
-       <input type="text" className={CrAccStyle.Mail}onChange={e => setMail(e.target.value)} placeholder="Mail"/>
-       <input type="text" className={CrAccStyle.Password}onChange={e => setPassword(e.target.value)} placeholder="password"/>
+      <form className={CrAccStyle.InlineForm}>
+       <input 
+       type="text" 
+       className={CrAccStyle.Name}
+       onChange={e => setName(e.target.value)} 
+       placeholder="Namn"
+       required
+       />
+       <input 
+       type="text" 
+       className={CrAccStyle.Mail}
+       onChange={e => setMail(e.target.value)}
+       placeholder="Mail"
+       required
+       />
+       <input
+       type="text"
+       className={CrAccStyle.Password}
+       onChange={e => setPassword(e.target.value)} 
+       placeholder="password"
+       required
+       />
 
-          <input type="submit" className={CrAccStyle.Submit} onClick={addUser} value="Skapa konto" />
+      <input type="submit" className={CrAccStyle.Submit} onClick={register} value="Skapa konto" />
           <Link to="/" className={CrAccStyle.Cancel}> <label type="text">Avbryt</label></Link>
           
        
