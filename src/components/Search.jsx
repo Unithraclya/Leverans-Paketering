@@ -1,5 +1,8 @@
 import  React, { useEffect, useRef, useState} from "react"
 
+//style
+import SearchStyle from '../css/Search.module.css'
+
 
 
 
@@ -22,7 +25,7 @@ export default function Search() {
 
     useEffect(() => {
         (async () => {
-          //fetch all users
+          //fetch all posters
           setPosters(await(await fetch('/api/posters')).json());
         })();
       }, []);
@@ -31,17 +34,17 @@ export default function Search() {
     const PosterList = () => 
     posters
     .filter(poster => 
-      poster.category.toLowerCase().includes(search.toLowerCase())
+         poster.category.toLowerCase().includes(search.toLowerCase())
       || poster.name.toLowerCase().includes(search.toLowerCase()))
     .map(poster => {
       return (
-        <div  //id, name, description, price, image
+        <div
           key={poster.id}
-          className="card"
-          style={styles.heroList}
+          className={SearchStyle.InnerGrid}
+
         >
-          <div className="card-image">
-            <img style={styles.heroList.image} src={poster.image} />
+          <div className={SearchStyle.image}>
+            <img src={poster.image} />
           </div>
           <span style={{textTransform: 'capitalize'}} className="card-title">Titel:<br/>{poster.name}</span>
           <span style={{textTransform: 'capitalize'}} className="card-title">Beskrivning:<br/>{poster.description}</span>
@@ -54,7 +57,7 @@ export default function Search() {
   )
 
   return (
-    <div>
+    <div className={SearchStyle.Searchgrid}>
       <SearchBar search={search} setSearch={setSearch} />
       <PosterList />
     </div>
