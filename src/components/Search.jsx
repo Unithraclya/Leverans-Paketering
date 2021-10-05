@@ -4,14 +4,13 @@ import  React, { useEffect, useRef, useState} from "react"
 import SearchStyle from '../css/Search.module.css'
 
 
-
-
 const SearchBar = ({search, setSearch}) => (
   <input 
+    className={SearchStyle.searchfield}
     value={search}
     onChange={e => setSearch(e.target.value)}
     type="text"
-    placeholder="search poster"
+    placeholder="Sök posters (namn, kategori)"
   />
 )
 export default function Search() {
@@ -44,12 +43,12 @@ export default function Search() {
 
         >
           <div className={SearchStyle.image}>
-            <img src={poster.image} />
+          <img src={poster.image} />
           </div>
-          <span style={{textTransform: 'capitalize'}} className="card-title">Titel:<br/>{poster.name}</span>
-          <span style={{textTransform: 'capitalize'}} className="card-title">Beskrivning:<br/>{poster.description}</span>
-          <span style={{textTransform: 'capitalize'}} className="card-title">{poster.price} kr</span>
-          <span style={{textTransform: 'capitalize'}} className="card-title">{poster.category}</span>
+          <span>Titel:<br/>{poster.name}</span>
+          <span>Beskrivning:<br/>{poster.description}</span>
+          <span>{poster.price} kr</span>
+          <span>{poster.category}</span>
 
         </div>
       )
@@ -62,23 +61,4 @@ export default function Search() {
       <PosterList />
     </div>
   )
-}
-
-const styles = {
-  searchForm: {
-    display: 'grid',
-    gridTemplateColumns: '1fr 30px'
-  },
-  
-  heroList: {
-    display: 'grid',
-    gridTemplateColumns: '30% 1fr 30px',
-    textAlign: 'center',
-    alignItems: 'center',
-    paddingRight: '10px',
-    image: {
-      height: '100px',
-      objectFit: 'cover'
-    }
-  }
 }

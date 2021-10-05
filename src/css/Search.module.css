@@ -8,16 +8,27 @@
   margin: auto;
   margin-bottom: 246px;
   margin-top: 3rem;
-  min-width: 280px;
+  min-width: 305px;
   max-width: 600px;
   row-gap: 100px;
 }
 
 .InnerGrid {
   display: grid;
-  grid-template-columns: 23% 28% 33% auto;
+  grid-template-columns: 21% 30% 30% auto;
+  margin: 0px 10px 0px 10px;
 }
 
 .image img {
   height: 100px;
+}
+
+.searchfield {
+  width: 90%;
+  margin: auto;
+  height: 40px;
+  font-size: 15px;
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 1px;
 }
