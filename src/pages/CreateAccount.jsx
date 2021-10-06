@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef, setState} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 import { useHistory } from "react-router-dom";
 import {Link} from 'react-router-dom';
 import { mailRegex, passRegex } from '../Reg/Reg';
@@ -6,6 +6,10 @@ import { mailRegex, passRegex } from '../Reg/Reg';
 //Styles
 import CrAccStyle from '../css/CreateAccount.module.css'
 
+// simplify fetch
+async function simpleFetch(url, settings) {
+  return await (await fetch(url, settings)).json();
+}
 
 export default function CreateAccount() {
   const [nameReg, setName] = useState('');
@@ -64,16 +68,17 @@ export default function CreateAccount() {
 e.preventDefault();
   const isValid = validate();
   if(isValid){
-      await fetch('/api/users', {
+     await fetch('/api/users', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name:nameReg, mail:mailReg, password:passwordReg })
   },
-    {withCredentials:true},
 
         ).then((res) => {
+
           if(!res.ok) {
             throw Error('Kunde inte skapa konto, försök med en annan email');
+
           }else{
           console.log("registration res", res);
           setError(null);
@@ -138,14 +143,6 @@ e.preventDefault();
        
        </form>
 
-        {/* {users.map(({id, name, mail, password})=> 
-            <div key={id}>
-            <h2>{name}</h2>
-            <h3>{mail}</h3>
-            <h3>{password}</h3>
-        
-        </div>
-         ,console.log(users))}   */}
     </div>
   )
 }

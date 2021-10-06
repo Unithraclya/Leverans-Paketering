@@ -22,6 +22,10 @@ import Footer from './components/Footer'
 
 export default function App() {
   
+  const [loggedInStatus, setLoggedInStatus] = useState("Inte inloggad");
+  const [user, setUser] = useState ({});
+
+
 
   return (
     <div className="App">
@@ -32,8 +36,12 @@ export default function App() {
       
       <Switch>
 
-        <Route exact path="/" component={Home} />
-      
+        <Route 
+        exact 
+        path={"/"}   
+        render={props => (
+        <Home {...props} loggedInStatus={loggedInStatus} />
+        )} />
         <Route exact path="/LikedPosters" component={LikedPosters} />
 
         <Route exact path="/Cart" component={Cart} />
