@@ -16,8 +16,9 @@ span,
 link,
 a,
 input,
-button {
-  font-family: "Habibi", serif !important;
+button,
+div {
+  font-family: "Habibi", serif;
 }
 .App {
   text-align: center;
