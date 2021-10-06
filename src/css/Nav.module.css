@@ -76,6 +76,11 @@
   grid-column: 3;
 }
 
+.SearchIcon:hover {
+  filter: invert(99%) sepia(7%) saturate(301%) hue-rotate(204deg)
+    brightness(113%) contrast(80%);
+}
+
 .CompanyText {
   font-size: small;
   grid-column: 5;
@@ -88,10 +93,19 @@
   grid-column: 7;
 }
 
+.HeartIcon:hover {
+  filter: invert(27%) sepia(10%) saturate(27%) hue-rotate(314deg)
+    brightness(94%) contrast(81%);
+}
+
 .CartIcon {
   grid-column: 8;
 }
 
+.CartIcon:hover {
+  filter: invert(27%) sepia(10%) saturate(27%) hue-rotate(314deg)
+    brightness(94%) contrast(81%);
+}
 /* Nav Menu */
 
 .center {

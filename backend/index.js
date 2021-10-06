@@ -70,21 +70,34 @@ app.get('/api/users/byName/:name', (req, res) => {
 // });
 
 // Create a new product
-// app.post('/api/users', (req, res) => {
-//   let stmt = db.prepare(`
-//     INSERT INTO users (name, mail, password)
-//     VALUES (:name, :mail, :password
-//   )`);
-//   console.log(req.body)
-//   return res.json(stmt.run(req.body));
+app.post('/api/users', (req, res) => {
+  let stmt = db.prepare(`
+    INSERT INTO users (name, mail, password)
+    VALUES (:name, :mail, :password
+  )`);
+  console.log(req.body)
+  return res.json(stmt.run(req.body));
     
-// }),
-//   let stmt = db.prepare(`
-//   INSERT INTO users (name, mail, password)
-//   VALUES (:name, :mail, :password
-//     )`)
-//   return res.json(stmt.run(req.body));
+})
 
+// app.post('/api/users', (req, res) => {
+//   User.findOne({name: req.query.name}, function(err, name){
+//     if(err) {
+//       console.log(err);
+//     }
+//     var message;
+//     if(name) {
+//       console.log(name)
+//         message = "name exists";
+//         console.log(message)
+
+//     }else{
+//     let stmt = db.prepare(`
+//     INSERT INTO users (name, mail, password)
+//     VALUES (:name, :mail, :password)`);
+    
+//     return res.json(stmt.run(req.body));
+// }});
 // });
 
 // Update/change a product
@@ -111,25 +124,7 @@ app.delete('/api/users/:id', (req, res) => {
 });
 
 
-app.post('/api/users', (req, res) => {
-  User.findOne({name: req.query.name}, function(err, name){
-    if(err) {
-      console.log(err);
-    }
-    var message;
-    if(name) {
-      console.log(name)
-        message = "name exists";
-        console.log(message)
 
-    }else{
-    let stmt = db.prepare(`
-    INSERT INTO users (name, mail, password)
-    VALUES (:name, :mail, :password)`);
-    
-    return res.json(stmt.run(req.body));
-}});
-});
 
 
 // app.post('/api/users', function(req,res){

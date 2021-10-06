@@ -5,84 +5,54 @@ import {Link} from 'react-router-dom';
 //Styles
 import CrAccStyle from '../css/CreateAccount.module.css'
 
-// simplify fetch
-async function simpleFetch(url, settings) {
-  return await (await fetch(url, settings)).json();
-}
 
 export default function CreateAccount() {
-  const [user, setUser] = useState([]);
   const [nameReg, setName] = useState('');
   const [mailReg, setMail] = useState('');
   const [passwordReg, setPassword] = useState('');
+  const [error, setError] = useState (null);
+  const [nameError, setNameError] = useState('');
+  const [mailError, setMailError] = useState('');
+  const [passwordError, setPasswordError] = useState('');
+
+  let history = useHistory();
+  
 
 
-  //fetch all users
 
-  // useEffect(() => {
-  //   (async () => {
-  //     //fetch all users
-  //     setUser(await(await fetch('api/users')).json());
-  //   })();
-  // }, []);
-
- 
-
-  const register = async function(e) {
-    console.log("Form submitted");
-    e.preventDefault();
-
+  async function register(e) {
+e.preventDefault();
       await fetch('/api/users', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-     
-      body: JSON.stringify({ 
-         name:nameReg,
-         mail:mailReg,
-         password:passwordReg }   ,console.log(mailReg))
-       
-      
+      body: JSON.stringify({ name:nameReg, mail:mailReg, password:passwordReg })
     },
-    {withCredentials:true}
-   
+    {withCredentials:true},
 
-    ).then((res) => {
-      console.log(res);
-      return res.json();
-    })
-    .then((res) => {
-     console.log('Printing out json'); 
-     console.log(res);
-  })
-  .catch((err) => {
-      console.log(err);
-  });
+        ).then((res) => {
+          if(!res.ok) {
+            throw Error('Could not fetch data, try an unique e-mail');
+          }else{
+          console.log("registration res", res);
+          setError(null);
+          history.push('/')
+        }})
 
- [];
+      .catch((err) => {
+          console.log("registration error", err);
+          setError(err.message)
+      });
+    
+      
 
-  }
-
-  
-
-  // A working fetch all users 
-
-  // return (
-  //   <div className="App">
-  //       {users.map(({id, name, mail, password})=> 
-  //           <div key={id}>
-  //           <h3>{name} </h3>
-  //           <p>Email: {mail}</p>
-  //           <p>Birth date: {password}</p>
-  //         </div>
-  //       )}
-  //   </div>
-  // )
-
+     [];
+      
+     }
 
 
   return (
     <div className={CrAccStyle.Form} onSubmit={register}>
-         
+         {error && <div> {error} </div>}
       <form className={CrAccStyle.InlineForm}>
        <input 
        type="text" 
@@ -95,14 +65,14 @@ export default function CreateAccount() {
        type="text" 
        className={CrAccStyle.Mail}
        onChange={e => setMail(e.target.value)}
-       placeholder="Mail"
+       placeholder="E-mail"
        required
        />
        <input
        type="text"
        className={CrAccStyle.Password}
        onChange={e => setPassword(e.target.value)} 
-       placeholder="password"
+       placeholder="Lösenord"
        required
        />
 
