@@ -13,6 +13,7 @@ import Nav from './components/Nav';
 import Search from './components/Search';
 import Status from './components/Status';
 
+
 import LoginForm from './components/LoginForm';
 
 
@@ -25,7 +26,6 @@ import Footer from './components/Footer'
 export default function App() {
   
   const [loggedInStatus, setLoggedInStatus] = useState("Inte inloggad");
-  const [user, setUser] = useState ({});
 
 
 
@@ -52,11 +52,11 @@ export default function App() {
 
         <Route exact path="/LikedPosters" component={LikedPosters} />
 
-        <Route exact path="/Cart" component={Cart} />
+        <Route exact path="/cart" component={Cart} />
 
         <Route exact path="/Search" component={Search} />
 
-        <Route exact path="/PosterPage" component={PosterPage} />
+        <Route path="/poster/:id" component={PosterPage} />
 
         <Route exact path="/LoginPage" component={LoginNew} />
 

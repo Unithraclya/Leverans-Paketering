@@ -120,6 +120,8 @@
 .Previewimg {
   grid-row: 2;
   grid-column: 1/4;
+  width: -webkit-fill-available;
+  min-width: 100px;
 }
 
 .ProductTitle {

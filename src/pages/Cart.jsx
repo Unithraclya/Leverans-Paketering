@@ -1,14 +1,14 @@
 
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 
 /*StyleSheet */
 import CartStyle from '../css/Cart.module.css'
-
 /*Imported forms */
 import CartAddress from '../components/CartAddressForm';
 import CartShipping from '../components/CartShippingForm';
 import CartPayment from '../components/CartPaymentForm';
 import CartProduct from '../components/CartProductForm';
+
 
 
 export default function Cart() {
@@ -17,9 +17,14 @@ export default function Cart() {
   
 
     return (
-<div className={CartStyle.cart}>   
+<div className={CartStyle.cart}>  
+
+            
+            
+
         {/*Products */}
-        <CartProduct/>
+        <CartProduct
+        />
 
         {/*Address */}
         <h3 className={CartStyle.Title}>Adress</h3>
@@ -41,7 +46,7 @@ export default function Cart() {
 
             <button className={CartStyle.Totalbutton}>Slutför köp</button>
         </div>
-    
+     
  </div>
     )
 }
