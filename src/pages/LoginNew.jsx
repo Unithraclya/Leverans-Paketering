@@ -18,6 +18,7 @@ export default function Login() {
   //Validation 
   const [passwordError, setPasswordError] = useState('');
   const [emailErrorVer, setEmailErrorVer] = useState('');
+  const [isLoggedIn, setLoggedIn] = useState(false);
 
 
   let history = useHistory();
@@ -63,6 +64,7 @@ export default function Login() {
               throw Error('Kunde inte logga in');
             }else{
             console.log("login res", res);
+            setLoggedIn(true);
             setError(null);
             history.push('/')
           }})
@@ -73,7 +75,9 @@ export default function Login() {
         });
     }
         
-  
+    if (isLoggedIn) {
+        history.push('/');
+    }
        [];
         
        }

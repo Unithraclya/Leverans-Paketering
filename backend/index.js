@@ -93,17 +93,17 @@ return res.json(stmt.run(req.body));
 
 //Login 
 
-app.post('/api/login', (req, res) => {
-  let stmt = db.prepare(`
-  INSERT INTO login
-  SELECT *
-  FROM users
-  WHERE mail = :mail AND password = :password
-`);
-  console.log(req.body)
-  return res.json(stmt.run(req.body));
+// app.post('/api/login', (req, res) => {
+//   let stmt = db.prepare(`
+//   INSERT INTO login
+//   SELECT *
+//   FROM users
+//   WHERE mail = :mail AND password = :password
+// `);
+//   console.log(req.body)
+//   return res.json(stmt.run(req.body));
     
-})
+// })
 
 // app.post('/api/users', (req, res) => {
 //   User.findOne({name: req.query.name}, function(err, name){
