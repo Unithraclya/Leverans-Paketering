@@ -15,7 +15,7 @@ export default function Home() {
     useEffect(() => {
         (async () => {
           //fetch all users
-          setPosters(await(await fetch('/api/posters')).json());
+          setPosters(await(await fetch('/api/posters' )).json());
         })();
       }, []);
 
@@ -37,7 +37,10 @@ export default function Home() {
     //     }
     // }
 
-    
+
+  
+ 
+
 
     return (
        
@@ -51,7 +54,8 @@ export default function Home() {
                     <div className={styles.dropdown}>
                         <button className={styles.dropbtn}>Kategori</button>
                         <div className={styles.dropdownContent}>
-                            <a className={styles.a}href="#">Natur</a>
+                        <a className={styles.a}href="#">Natur</a>
+                            {/*<button className="NatureBtn" onClick="natureClick"><a className={styles.a}href="#">Natur</a></button>*/}
                             <a className={styles.a}href="#">Djur</a>
                             <a className={styles.a}href="#">Abstrakt</a>
                         </div>
@@ -68,7 +72,7 @@ export default function Home() {
             </div>
            
          
-            {posters.map(({id, name, description, price, image}) => 
+            {posters.map(({id, name, description, price, image, category}) => 
             
             <div key={id}>
             
@@ -79,6 +83,7 @@ export default function Home() {
                     <div className={styles.top}>
                         <div className={styles.info}>
                             <p>{name} Poster {description} <br/> Från {price} kr</p>
+                            
                         </div>
                         <FontAwesomeIcon className={styles.heart} icon={faHeart}/>
                     </div>  

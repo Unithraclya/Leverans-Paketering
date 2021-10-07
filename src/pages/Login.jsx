@@ -4,7 +4,7 @@ import LoginForm from '../components/LoginForm';
 import '../css/Login.css'
 
 
-export default function Login() {
+export default function LoginBeta() {
     const adminUser = {
         email: "admin@admin.com",
         password: "admin123"

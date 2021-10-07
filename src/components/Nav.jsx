@@ -53,14 +53,14 @@ export default function Nav() {
         className={NavStyle.Links} >
         <Link to="/" className={NavStyle.Link}>Hem</Link>
         <Link to="/CreateAccount"className={NavStyle.Link}>Skapa Konto</Link>
-        <Link to="/Login" className={NavStyle.Link}>Logga in</Link>
+        <Link to="/LoginPage" className={NavStyle.Link}>Logga in</Link>
      </ul>
    </div>
      
 )}
    
       
-     
+ 
             <div 
             className={NavStyle.center} 
             alt ="Nav button" 
@@ -69,7 +69,7 @@ export default function Nav() {
             {/* Navigation invisible */}
    
   </div> 
- 
+   
 
             <Link to="/Search" className ={NavStyle.SearchIcon}><img src={SearchIcon} alt = 'Search' /></Link>
             <Link to="/" className={NavStyle.CompanyText}>POSTERGANG.COM </Link>

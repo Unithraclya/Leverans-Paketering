@@ -1,3 +1,5 @@
+
+
 const path = require('path');
 const express = require('express');
 const sqlDriver = require('better-sqlite3');
@@ -18,6 +20,7 @@ app.use(express.json());
 // create a connection to the database
 // const db = new sqlDriver('./dbse/sqlite3.db');
 const db = new sqlDriver(path.join(__dirname,'../dbse/sqlite3.db'));
+
 
 
 
@@ -68,20 +71,59 @@ app.get('/api/users/byName/:name', (req, res) => {
 
 // Create a new product
 app.post('/api/users', (req, res) => {
-  // let stmt = db.prepare(`
-  //   INSERT INTO users (name, mail, password)
-  //   VALUES (:name, :mail, :password
-  // `));
-  // console.log(req.body)
-  // return res.json(stmt.run(req.body));
-
   let stmt = db.prepare(`
-  INSERT INTO users (name, mail, password)
-  VALUES (:name, :mail, :password
-    )`)
-  return res.json(stmt.run(req.body));
+    INSERT INTO users (name, mail, password)
+    VALUES (:name, :mail, :password
+  )`);
+  console.log(req.body)
+  res.json(stmt.run(req.body));
+    
+})
 
-});
+app.post('/api/login', (req, res) => {
+  let stmt = db.prepare(`
+  SELECT *
+  FROM users
+  WHERE mail = :mail AND password = :password
+`,)
+console.log(req.body)
+return res.json(stmt.run(req.body));
+
+})
+
+//Login 
+
+// app.post('/api/login', (req, res) => {
+//   let stmt = db.prepare(`
+//   INSERT INTO login
+//   SELECT *
+//   FROM users
+//   WHERE mail = :mail AND password = :password
+// `);
+//   console.log(req.body)
+//   return res.json(stmt.run(req.body));
+    
+// })
+
+// app.post('/api/users', (req, res) => {
+//   User.findOne({name: req.query.name}, function(err, name){
+//     if(err) {
+//       console.log(err);
+//     }
+//     var message;
+//     if(name) {
+//       console.log(name)
+//         message = "name exists";
+//         console.log(message)
+
+//     }else{
+//     let stmt = db.prepare(`
+//     INSERT INTO users (name, mail, password)
+//     VALUES (:name, :mail, :password)`);
+    
+//     return res.json(stmt.run(req.body));
+// }});
+// });
 
 // Update/change a product
 app.put('/api/users/:id', (req, res) => {
@@ -110,6 +152,22 @@ app.delete('/api/users/:id', (req, res) => {
 
 
 
+// app.post('/api/users', function(req,res){
+//   console.log("got register post", req.body)
+//   if (req.body.name && req.body.password && req.body.mail) {
+//     db.prepare("SELECT * FROM Users WHERE name = :name LIMIT 1", req.body.name, function(err, row){
+//       if(row){
+//         res.end("Account already exists");
+//       } else {
+//         var stmt = db.prepare(`INSERT INTO user VALUES (name, mail, password)
+//         VALUES (:name, :mail, :password)`);
+//         return res.json(stmt.run(req.body));
+//         // stmt.run(req.body.name, req.body.password, req.body.mail);
+//         // res.end("OK");
+       
+//   }
+// });
+//   }});
 
 
 //POSTERS

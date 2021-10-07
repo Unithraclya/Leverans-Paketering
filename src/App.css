@@ -7,11 +7,24 @@
   --lightgray: #e6e6e6;
   /* How to use = ex. background-color: var(--white); */
 }
+h1,
+h2,
+h3,
+h4,
+p,
+span,
+link,
+a,
+input,
+button,
+div {
+  font-family: "Habibi", serif;
+}
 .App {
   text-align: center;
 }
 
-.test{
+.test {
   height: 100vh;
   padding-top: 5vh;
 }
@@ -57,10 +70,4 @@ body {
 
 button {
   font-size: calc(10px + 2vmin);
-}
-
-
-@font-face {
-  font-family: Habibi;
-  src: url(sansation_light.woff);
 }

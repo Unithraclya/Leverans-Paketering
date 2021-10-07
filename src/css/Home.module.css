@@ -1,141 +1,138 @@
-.mainContainer{
-    height: fit-content;
-    width: 100vw;
-    width: 100vw;
-    padding-top: 3vh;
-    padding-bottom: 50vh;
-  
+.mainContainer {
+  height: fit-content;
+  width: 100vw;
+  width: 100vw;
+  padding-top: 3vh;
+  padding-bottom: 50vh;
 }
 
-.header{
-    height: max-content;
+.header {
+  height: max-content;
 }
 
-.header p{
-    margin: 10px auto 0px auto;
-    font-size: 12px;
+.header p {
+  margin: 10px auto 0px auto;
+  font-size: 12px;
 }
 
-.btns{
-  
-    display: flex;
-    /* justify-content: space-around; */
-    justify-content: center;
+.btns,
+button {
+  display: flex;
+  /* justify-content: space-around; */
+  justify-content: center;
 }
 
-.dropbtn {
-    background-color: #ffffff;
-    border: 1px solid rgba(0, 0, 0, 0.768) !important;
-    cursor: pointer;
-    color: black;
-    padding: 16px;
-    text-transform: uppercase;
-    font-size: 13px;
-    width: 140px;
-    height: 30px;
-    border: none;
-    text-align: center;
-    line-height: 0px;
-    font-family:'Times New Roman', Times, serif;
-    
-  }
-  
-  .dropdown {
-    margin: 10px;
-    position: relative;
-    display: inline-block;
-  }
-  
-  .dropdownContent {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    width: 140px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-  
-  .dropdownContent .a {
-    color: black;
-    width: 140px;
-    padding: 12px 1px;
-    text-decoration: none;
-    display: block;
-  }
-  
-  .dropdownContent .a:hover {background-color: #ddd;}
-  
-  .dropdown:hover .dropdownContent {display: block;}
-  
-  .dropdown:hover .dropbtn {background-color: #ffffff;}
-
-
-.btn{
-    width: 250px;
-    height: 50px;
-    border: none;
-    background-color: #ffd000; 
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-}
-.btn:hover{
-    background-color: #ffae00; 
+.dropbtn,
+button {
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.768) !important;
+  cursor: pointer;
+  color: black;
+  padding: 16px;
+  text-transform: uppercase;
+  font-size: 13px;
+  width: 140px;
+  height: 30px;
+  border: none;
+  text-align: center;
+  line-height: 0px;
 }
 
-
-
-.items{
-    height: fit-content;
-    width: 80vw;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-   
+.dropdown {
+  margin: 10px;
+  position: relative;
+  display: inline-block;
 }
 
-.item{
-    width: 250px;
-    height: fit-content;
-    margin: 30px;
-    display: flex;
-    flex-direction: column;
+.dropdownContent {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  width: 140px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
 
-.image{
-    border: 1px solid rgba(0, 0, 0, 0.100);
-    width:250px;
+.dropdownContent .a {
+  color: black;
+  width: 140px;
+  padding: 12px 1px;
+  text-decoration: none;
+  display: block;
 }
 
-.img{
-    width: 250px;
+.dropdownContent .a:hover {
+  background-color: #ddd;
 }
 
-.top{
-    margin: 0 auto;
-    width: 250px;
-    height: 60px;
-    display: flex;
-    justify-content: space-between; 
+.dropdown:hover .dropdownContent {
+  display: block;
 }
 
-.info{
-    text-align: left;
+.dropdown:hover .dropbtn {
+  background-color: #ffffff;
+}
+
+.btn {
+  width: 250px;
+  height: 50px;
+  border: none;
+  background-color: #ffd000;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.btn:hover {
+  background-color: #ffae00;
+}
+
+.items {
+  height: fit-content;
+  width: 80vw;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.item {
+  width: 250px;
+  height: fit-content;
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.image {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  width: 250px;
+}
+
+.img {
+  width: 250px;
+}
+
+.top {
+  margin: 0 auto;
+  width: 250px;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.info {
+  text-align: left;
 }
 
 .heart {
-    margin-top: 15px;
-    font-size: 23px;
+  margin-top: 15px;
+  font-size: 23px;
 }
 
-
-
-@media screen and (max-width: 320px){
-    main-container{
-        display: none;
-    }
+@media screen and (max-width: 320px) {
+  main-container {
+    display: none;
+  }
 }
-
