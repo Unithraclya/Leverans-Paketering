@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import { useHistory } from 'react-router-dom'
 import styles from '../css/Home.module.css'
 import CartIcon from '../icons/cartfilled36dp.svg'
 import PosterInfo from './PosterInfo'
@@ -10,6 +11,7 @@ import { faHeart, faComment } from "@fortawesome/free-regular-svg-icons";
 
 export default function Home() {
     const [posters, setPosters] = useState([]);
+    const history = useHistory()
 
 
     useEffect(() => {
@@ -40,6 +42,7 @@ export default function Home() {
 
   
  
+
 
 
     return (
@@ -74,7 +77,12 @@ export default function Home() {
          
             {posters.map(({id, name, description, price, image, category}) => 
             
-            <div key={id}>
+            
+
+            <div key={id}
+            onClick={() => history.push('/poster/' + id)} 
+
+            >
             
 
             <div className={styles.items} >
