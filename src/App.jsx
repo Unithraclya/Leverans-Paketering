@@ -1,3 +1,5 @@
+
+
 import React, { useState } from 'react'
 import './App.css'
 import { Route, Switch } from "react-router";
@@ -20,6 +22,7 @@ import LoginForm from './components/LoginForm';
 import Error404 from './pages/Error404';
 import Banner from './components/Banner';
 import Footer from './components/Footer'
+import Electron from './components/Electron';
 
 
 
@@ -36,7 +39,7 @@ export default function App() {
       <Nav/>
       <Banner />
       <Status/>
-
+      {navigator.appVersion.includes("Electron") && <Electron/>} 
       <Switch>
 
     
