@@ -21,6 +21,9 @@ export default function Home() {
         })();
       }, []);
 
+
+      let favoriteIds = localStorage['LikedPosters'] && JSON.parse(localStorage['LikedPosters']) || []
+
     // const [setPosterInfo] = useState([]);
     // useEffect(() => {
     //     fetchPosterInfo();
@@ -39,11 +42,12 @@ export default function Home() {
     //     }
     // }
 
-
+    const [change, setChange] = useState(null);
     const addFavorite = id => {
         let favoriteIds = localStorage['LikedPosters'] && JSON.parse(localStorage['LikedPosters']) || []
         favoriteIds.push(id)
         localStorage['LikedPosters'] = JSON.stringify(favoriteIds)
+        setChange(Math.random())
       }
  
 
@@ -97,7 +101,7 @@ export default function Home() {
                             <p>{name} Poster {description} <br/> Från {price} kr</p>
                             
                         </div>
-                        <FontAwesomeIcon className={styles.heart} onClick={() => addFavorite(id)} icon={faHeart}/>
+                        <FontAwesomeIcon className={styles.heart} onClick={() => addFavorite(id)} icon={favoriteIds.includes(id)?solidHeart: faHeart}/>
                     </div>  
                 </div>                                                                      
             </div> 
