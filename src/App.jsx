@@ -1,8 +1,9 @@
 
 
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import './App.css'
 import { Route, Switch } from "react-router";
+
 import Home from './pages/Home';
 import LikedPosters from './pages/LikedPosters';
 import Cart from './pages/Cart';
@@ -27,19 +28,30 @@ import Electron from './components/Electron';
 
 
 export default function App() {
-  
-  const [loggedInStatus, setLoggedInStatus] = useState("Inte inloggad");
 
+  const [loggedInStatus, setLoggedInStatus] = useState("Inte inloggad");
+  const logout = () => {
+    delete localStorage.loggedInUser;  
+    setLoggedInStatus("Inte inloggad");
+  }
+
+  useEffect(() => {
+    localStorage.loggedInUser && loggedInStatus === "Inte inloggad" &&  setLoggedInStatus(JSON.parse(localStorage.loggedInUser).mail);
+    console.log(localStorage.loggedInUser);
+  },[])
+  console.log(loggedInStatus);
 
 
   return (
     <div className="App">
       
 
-      <Nav/>
+      <Nav loggedInStatus={loggedInStatus} logout={logout}/>
       <Banner />
       <Status/>
       {navigator.appVersion.includes("Electron") && <Electron/>} 
+      {/* {navigator.appVersion.includes("Electron") && <LikedPosters/>} */}
+
       <Switch>
 
     
@@ -47,13 +59,13 @@ export default function App() {
         <Route  
         path={"/Status"}   
         render={props => (
-        <Status {...props} loggedInStatus={loggedInStatus} />
+        <Status {...props} loggedInStatus={setLoggedIn} />
+        
         )} />
 
         <Route exact path="/" component={Home} />
 
-
-        <Route exact path="/LikedPosters" component={LikedPosters} />
+        {navigator.appVersion.includes("Electron") && <LikedPosters/>}
 
         <Route exact path="/cart" component={Cart} />
 
@@ -61,7 +73,10 @@ export default function App() {
 
         <Route path="/poster/:id" component={PosterPage} />
 
-        <Route exact path="/LoginPage" component={LoginNew} />
+        <Route exact path="/LoginPage">
+        <LoginNew setLoggedInStatus = {setLoggedInStatus}/>    
+        </Route>
+
 
         <Route exact path="/Login" component={Login} />
 
