@@ -85,11 +85,10 @@ app.post('/api/login', (req, res) => {
   SELECT *
   FROM users
   WHERE mail = :mail AND password = :password
-`,)
-console.log(req.body)
-return res.json(stmt.run(req.body));
+`)
+res.json(stmt.all(req.body));
 
-})
+    })
 
 //Login 
 

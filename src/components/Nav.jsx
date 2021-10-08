@@ -11,7 +11,7 @@ import CartIcon from '../icons/cartfilled36dp.svg'
 
 
 
-export default function Nav() {
+export default function Nav({loggedInStatus,logout}) {
 
     const ref = useRef()
 
@@ -37,14 +37,15 @@ export default function Nav() {
 
       
      
-    
+    console.log(loggedInStatus);
     return (
         
 <div className={NavStyle.MenuHeader}>
         <div ref={ref}>
-        
+        <h2>{loggedInStatus}</h2>
+        {loggedInStatus !== "Inte inloggad" && <button onClick={logout}>Logga ut</button>}
         <div className={NavStyle.HeaderGrid}>
-{isMenuOpen && (
+        {isMenuOpen && (
     
     <div className={NavStyle.TopNav}  
     onClick={() => setIsMenuOpen(newState => !newState)} >
@@ -73,7 +74,7 @@ export default function Nav() {
 
             <Link to="/Search" className ={NavStyle.SearchIcon}><img src={SearchIcon} alt = 'Search' /></Link>
             <Link to="/" className={NavStyle.CompanyText}>POSTERGANG.COM </Link>
-            <Link to="/LikedPosters"className ={NavStyle.HeartIcon}><img src={HeartIcon} alt = 'Like'/></Link>
+            {navigator.appVersion.includes("Electron") &&<Link to="/LikedPosters"className ={NavStyle.HeartIcon}><img src={HeartIcon} alt = 'Like'/></Link>}
             <Link to="/Cart"className ={NavStyle.CartIcon}><img src={CartIcon} alt = 'Cart'/></Link>
            
             {/* Empty line */}

@@ -7,7 +7,7 @@ import { mailRegex, passRegex } from '../Reg/Reg';
 import CrAccStyle from '../css/CreateAccount.module.css'
 
 
-export default function Login() {
+export default function Login({setLoggedInStatus}) {
   const [mailReg, setMail] = useState('');
   const [passwordReg, setPassword] = useState('');
   
@@ -48,42 +48,28 @@ export default function Login() {
     
  
 
-  async function register(e) {
+  async function login(e) {
     e.preventDefault();
-  const isValid = validate();
-  if(isValid){
-      await fetch('/api/login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({mail:mailReg, password:passwordReg })
-  },
-    {withCredentials:true},
-
-      ).then((res) => {
-            if(!res.ok) {
-              throw Error('Kunde inte logga in');
-            }else{
-            console.log("login res", res);
-            setLoggedIn(true);
-            setError(null);
-            history.push('/')
-          }})
-  
-        .catch((err) => {
-            console.log("login error", err);
-            setError(err.message)
-        });
+    const isValid = validate();
+    if(isValid){
+      let result = await( await fetch('/api/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({mail:mailReg, password:passwordReg })
+      })).json();   
+      console.log(result);
+      localStorage.loggedInUser = JSON.stringify(result[0]);
+      result[0] && setLoggedInStatus (mailReg)
+      history.push('/')
     }
+     
+  }
+      
         
-    if (isLoggedIn) {
-        history.push('/');
-    }
-       [];
-        
-       }
+       
 
   return (
-    <div className={CrAccStyle.Form} onSubmit={register}>
+    <div className={CrAccStyle.Form} onSubmit={login}>
          {emailError && <div> {emailError} </div>}
       <form onDoubleClick={validate} className={CrAccStyle.InlineForm}>
       
@@ -110,7 +96,7 @@ export default function Login() {
       {Object.keys(passwordError).map((key)=> {
          return <div className={CrAccStyle.ErrorPassword} key={key} style ={{color : "red"}}> {passwordError[key]}</div>
        })}
-      <input type="submit" className={CrAccStyle.Submit} onClick={register} value="Login" />
+      <input type="submit" className={CrAccStyle.Submit} onClick={login} value="Login" />
           <Link to="/" className={CrAccStyle.Cancel}> <label type="text">Avbryt</label></Link>
           
        

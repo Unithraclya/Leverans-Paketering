@@ -50,7 +50,7 @@ const fetchPosters = async () => {
                         <Dropdown />
                         <p className={styles.price}> Från {price} kr</p>
                         <BuyBtn />
-                        <FontAwesomeIcon className={styles.heart} icon={faHeart}/>
+                        {navigator.appVersion.includes("Electron") && <FontAwesomeIcon className={styles.heart} icon={faHeart}/>}
                     </div>
                     </div>   
                    )} 
