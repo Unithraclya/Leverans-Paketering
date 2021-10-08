@@ -112,6 +112,7 @@ button {
 
 .img {
   width: 250px;
+  cursor: pointer;
 }
 
 .top {

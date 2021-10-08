@@ -1,4 +1,5 @@
 
+
 import React, { useState, useEffect } from 'react'
 
 /*StyleSheet */
@@ -10,13 +11,13 @@ import CartPayment from '../components/CartPaymentForm';
 import CartProduct from '../components/CartProductForm';
 
 
-
 export default function Cart() {
     
    
   
 
     return (
+
 <div className={CartStyle.cart}>  
 
             

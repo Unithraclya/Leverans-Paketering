@@ -40,7 +40,11 @@ export default function Home() {
     // }
 
 
-  
+    const addFavorite = id => {
+        let favoriteIds = localStorage['LikedPosters'] && JSON.parse(localStorage['LikedPosters']) || []
+        favoriteIds.push(id)
+        localStorage['LikedPosters'] = JSON.stringify(favoriteIds)
+      }
  
 
 
@@ -80,20 +84,20 @@ export default function Home() {
             
 
             <div key={id}
-            onClick={() => history.push('/poster/' + id)} 
+           
 
             >
             
 
             <div className={styles.items} >
                 <div className={styles.item}>
-                    <div className={styles.image}><img className={styles.img} src={image} /></div>
+                    <div className={styles.image}><img className={styles.img}  onClick={() => history.push('/poster/' + id)}  src={image} /></div>
                     <div className={styles.top}>
                         <div className={styles.info}>
                             <p>{name} Poster {description} <br/> Från {price} kr</p>
                             
                         </div>
-                        <FontAwesomeIcon className={styles.heart} icon={faHeart}/>
+                        <FontAwesomeIcon className={styles.heart} onClick={() => addFavorite(id)} icon={faHeart}/>
                     </div>  
                 </div>                                                                      
             </div> 
