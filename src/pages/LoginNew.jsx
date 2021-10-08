@@ -19,6 +19,7 @@ export default function Login() {
   const [passwordError, setPasswordError] = useState('');
   const [emailErrorVer, setEmailErrorVer] = useState('');
   const [isLoggedIn, setLoggedIn] = useState(false);
+  const [Logintext, setLoginText] = useState("");
 
 
   let history = useHistory();
@@ -48,7 +49,7 @@ export default function Login() {
     
  
 
-  async function register(e) {
+  async function login(e) {
     e.preventDefault();
   const isValid = validate();
   if(isValid){
@@ -56,34 +57,74 @@ export default function Login() {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({mail:mailReg, password:passwordReg })
-  },
-    {withCredentials:true},
+      }).then((response) => {
+            console.log("response",response);
+            response.json().then((data) => {
+                console.log("data",data);
+                console.log("response",response);
+                console.log("response data",response.data);
+                console.log("response message",response.message);
 
-      ).then((res) => {
-            if(!res.ok) {
-              throw Error('Kunde inte logga in');
-            }else{
-            console.log("login res", res);
-            setLoggedIn(true);
-            setError(null);
-            history.push('/')
-          }})
+
+            });
+                  if(!response.ok) {
+                    throw Error('Kunde inte logga in');
+                  }else{
+                  console.log("login res", response.data);
+                 
+                  
+                  setLoginText("logged in", response);
+                  setError(null);
+                  // history.push('/')
+                }})
+        
+              .catch((err) => {
+                  console.log("login error", err);
+                  setError(err.message)
+              });
+          }
+              
+          if (isLoggedIn) {
+              history.push('/');
+          }
+             [];
+              
+             }
+          // Old code
+        //   fetch(request).then((response) => {
+        //     console.log(response);
+        //     response.json().then((data) => {
+        //         console.log(data);
+        //     });
+        // });
+
+      // }).then((response) => {
+  //           if(!response.ok) {
+  //             throw Error('Kunde inte logga in');
+  //           }else{
+  //           console.log("login res", response);
+  //           console.log(response);
+            
+  //           setLoggedIn(true);
+  //           setError(null);
+  //           history.push('/')
+  //         }})
   
-        .catch((err) => {
-            console.log("login error", err);
-            setError(err.message)
-        });
-    }
+  //       .catch((err) => {
+  //           console.log("login error", err);
+  //           setError(err.message)
+  //       });
+  //   }
         
-    if (isLoggedIn) {
-        history.push('/');
-    }
-       [];
+  //   if (isLoggedIn) {
+  //       history.push('/');
+  //   }
+  //      [];
         
-       }
+  //      }
 
   return (
-    <div className={CrAccStyle.Form} onSubmit={register}>
+    <div className={CrAccStyle.Form} onSubmit={login}>
          {emailError && <div> {emailError} </div>}
       <form onDoubleClick={validate} className={CrAccStyle.InlineForm}>
       
@@ -110,12 +151,13 @@ export default function Login() {
       {Object.keys(passwordError).map((key)=> {
          return <div className={CrAccStyle.ErrorPassword} key={key} style ={{color : "red"}}> {passwordError[key]}</div>
        })}
-      <input type="submit" className={CrAccStyle.Submit} onClick={register} value="Login" />
+        <h2>hej{Logintext}</h2>
+      <input type="submit" className={CrAccStyle.Submit} onClick={login} value="Login" />
           <Link to="/" className={CrAccStyle.Cancel}> <label type="text">Avbryt</label></Link>
           
-       
+         
        </form>
-
+       
     </div>
   )
 }

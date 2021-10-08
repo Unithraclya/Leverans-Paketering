@@ -14,7 +14,7 @@ export default function CartAddressForm() {
             type='email'
         />
         <div className={CartStyle.FormGridText}>
-        <span>Om du redan är kund</span><Link to="/Login" className={CartStyle.Sign}>Logga in här.</Link>
+        <span>Om du redan är kund</span><Link to="/LoginPage" className={CartStyle.Sign}>Logga in här.</Link>
         </div>
         <input 
             className={CartStyle.FormGridMobile}

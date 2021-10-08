@@ -81,15 +81,45 @@ app.post('/api/users', (req, res) => {
 })
 
 app.post('/api/login', (req, res) => {
+  // const mail = req.body.mail;
+  // const password = req.body.mail;
+
+
   let stmt = db.prepare(`
   SELECT *
   FROM users
   WHERE mail = :mail AND password = :password
-`,)
-console.log(req.body)
-return res.json(stmt.run(req.body));
+`,
+// [mail,password],
+// (err, result) => {
+//   console.log(err)
+//   if(err) {
+//     res.send ({err: err});
+//   }
+//   if(result.length > 0){
+//     res.send(result);
+//     console.log(result)
 
-})
+//   }else {
+//     res.send({ message: "Fel användarnamn eller lösenord"});
+//   }
+// }
+);
+
+  if(res.length > 0){
+console.log(req.body)
+console.log(res.length)
+
+res.json(stmt.all({ mail: req.params.mail, password: req.params.password  }));
+
+// return res.json(stmt.run(req.body));
+}else {
+  res.send({ message: "Fel användarnamn eller lösenord"});
+
+}
+
+}
+);
 
 //Login 
 
