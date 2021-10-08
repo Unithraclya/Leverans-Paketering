@@ -1,5 +1,36 @@
+:root {
+  --green: #6cbf4f;
+  --yellow: #ffcd4c;
+  --white: #fff;
+  --black: #000000;
+  --blue: #005bc6;
+  --lightgray: #e6e6e6;
+  /* How to use = ex. background-color: var(--white); */
+}
+h1,
+h2,
+h3,
+h4,
+p,
+span,
+link,
+a,
+input,
+button,
+div {
+  font-family: "Habibi", serif;
+}
 .App {
   text-align: center;
+}
+
+.test {
+  height: 100vh;
+  padding-top: 5vh;
+}
+
+body {
+  margin: auto 0;
 }
 
 .App-logo {

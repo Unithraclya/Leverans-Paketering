@@ -1,0 +1,34 @@
+.Searchgrid {
+  display: grid;
+  margin-top: 100px;
+  margin-bottom: 340px;
+  grid-template-rows: repeat(10, 40px);
+  grid-template-columns: repeat(1, 1fr);
+  width: 92%;
+  margin: auto;
+  margin-bottom: 246px;
+  margin-top: 3rem;
+  min-width: 305px;
+  max-width: 600px;
+  row-gap: 100px;
+}
+
+.InnerGrid {
+  display: grid;
+  grid-template-columns: 21% 30% 30% auto;
+  margin: 0px 10px 0px 10px;
+}
+
+.image img {
+  height: 100px;
+}
+
+.searchfield {
+  width: 90%;
+  margin: auto;
+  height: 40px;
+  font-size: 15px;
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 1px;
+}
