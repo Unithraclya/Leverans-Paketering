@@ -8,6 +8,7 @@ import Home from './pages/Home';
 import LikedPosters from './pages/LikedPosters';
 import Cart from './pages/Cart';
 import PosterPage from './pages/PosterPage';
+
 import Login from './pages/Login';
 import LoginNew from './pages/LoginNew';
 import CreateAccount from './pages/CreateAccount';
@@ -58,7 +59,7 @@ export default function App() {
 
         {navigator.appVersion.includes("Electron") && <LikedPosters/>}
 
-        <Route exact path="/cart" component={Cart} />
+        <Route exact path="/Cart" component={Cart} />
 
         <Route exact path="/Search" component={Search} />
 
@@ -67,7 +68,6 @@ export default function App() {
         <Route exact path="/LoginPage">
         <LoginNew setLoggedInStatus = {setLoggedInStatus}/>    
         </Route>
-
 
         <Route exact path="/Login" component={Login} />
 

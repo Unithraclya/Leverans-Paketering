@@ -61,9 +61,9 @@ export default function Login({setLoggedInStatus}) {
       localStorage.loggedInUser = JSON.stringify(result[0]);
       result[0] && setLoggedInStatus (mailReg)
       history.push('/')
-    }
-     
+      }
   }
+     
       
         
        
