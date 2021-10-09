@@ -14,7 +14,6 @@ import CreateAccount from './pages/CreateAccount';
 import Confirmation from './pages/Confirmation';
 import Nav from './components/Nav';
 import Search from './components/Search';
-import Status from './components/Status';
 
 
 import LoginForm from './components/LoginForm';
@@ -29,14 +28,14 @@ import Electron from './components/Electron';
 
 export default function App() {
 
-  const [loggedInStatus, setLoggedInStatus] = useState("Inte inloggad");
+  const [loggedInStatus, setLoggedInStatus] = useState("Utloggad");
   const logout = () => {
     delete localStorage.loggedInUser;  
-    setLoggedInStatus("Inte inloggad");
+    setLoggedInStatus("Utloggad");
   }
 
   useEffect(() => {
-    localStorage.loggedInUser && loggedInStatus === "Inte inloggad" &&  setLoggedInStatus(JSON.parse(localStorage.loggedInUser).mail);
+    localStorage.loggedInUser && loggedInStatus === "Utloggad" &&  setLoggedInStatus(JSON.parse(localStorage.loggedInUser).mail);
     console.log(localStorage.loggedInUser);
   },[])
   console.log(loggedInStatus);
@@ -48,20 +47,12 @@ export default function App() {
 
       <Nav loggedInStatus={loggedInStatus} logout={logout}/>
       <Banner />
-      <Status/>
       {navigator.appVersion.includes("Electron") && <Electron/>} 
       {/* {navigator.appVersion.includes("Electron") && <LikedPosters/>} */}
 
       <Switch>
 
     
-
-        <Route  
-        path={"/Status"}   
-        render={props => (
-        <Status {...props} loggedInStatus={setLoggedIn} />
-        
-        )} />
 
         <Route exact path="/" component={Home} />
 

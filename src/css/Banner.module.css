@@ -1,17 +1,16 @@
-.banner{
-    width: 100vw;
-    height: max-content;
-    background: rgb(255, 207, 50);
-    top: 6vh;
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  
+.banner {
+  width: 100vw;
+  height: max-content;
+  background: rgb(255, 207, 50);
+  top: 6vh;
+  position: initial;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -18px;
 }
 
-.text{
-    text-align: center;
-    font-size: 14px;
-
+.text {
+  text-align: center;
+  font-size: 14px;
 }

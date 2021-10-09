@@ -101,7 +101,6 @@ export default function Home() {
                             <p>{name} Poster {description} <br/> Från {price} kr</p>
                             
                         </div>
-                       
                         {navigator.appVersion.includes("Electron") &&<FontAwesomeIcon className={styles.heart} onClick={() => addFavorite(id)} icon={favoriteIds.includes(id)?solidHeart: faHeart}/>}
                     </div>  
                 </div>                                                                      

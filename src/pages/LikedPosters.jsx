@@ -3,6 +3,7 @@ import styles from '../css/LikedPosters.module.css'
 import CartIcon from '../icons/cartfilled36dp.svg'
 import poster1 from '../assets/img/print.png'
 import poster2 from '../assets/img/poster.png'
+import remove from '../icons/remove.png'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faTimes, faHeart as solidHeart} from "@fortawesome/free-solid-svg-icons";
 import { faHeart, faComment } from "@fortawesome/free-regular-svg-icons";
@@ -33,31 +34,6 @@ export default function LikedPosters() {
   
     // {posters.map(({id, name, description, price, image, category}) => 
 
-    // const PosterList = () => (
-    //     posters.filter(poster => favorites.includes(poster.id))
-    //   .map(poster => (
-    //       <div    
-    //         key={poster.id}
-    //         // onClick={() => history.push('/hero/' + hero.id)} 
-    //         // className="card"
-    //         // style={styles.heroList}
-    //       >
-              
-    //         <div className="card-image">
-    //           <img src={poster.image} />
-    //         </div>
-    //         <span className="card-title">{poster.name}</span>
-    //         <i onClick={() => removeFavorite(poster.id)}>star</i>
-    //       </div>
-    //   ))
-    // )
-
-
-
-
-    
-
-
 
     return (
         <>
@@ -67,23 +43,27 @@ export default function LikedPosters() {
       .map(poster => (
           <div    
             key={poster.id}
-            // onClick={() => history.push('/hero/' + hero.id)} 
-            // className="card"
-            // style={styles.heroList}
+           
           >
             <div className={styles.header}>
-            <h1 className={styles.heading}>Önskelista</h1>
-            <p>Förlora inte dina favoritprodukter! <br/> Skapa ett konto eller logga in  för att spara dem på alla dina enheter.</p>
-                <div className="card-image">
-                <img src={poster.image} />
+            <h1 className={styles.heading}>{poster.name}</h1>
+
+            <div className={styles.items}>
+                    <div className={styles.item}>
+                <div className={styles.image}><img className={styles.image} src={poster.image} /></div>
                 </div>
-                <span className="card-title">{poster.name}</span>
-                <i onClick={() => removeFavorite(poster.id)}>star</i>
+                <span className={styles.info}>Beskrivning: {poster.description}</span>
+                <span className={styles.info}>Pris: {poster.price} kr
+                <img src={remove} className={styles.remove} onClick={() => removeFavorite(poster.id)}></img>
+
+                </span>
+
+            </div>
             </div>
           </div>
       ))}
-            {/* <PosterList/> */}
-                <div className={styles.header}>
+            {/* <PosterList/> Static */}
+                {/* <div className={styles.header}>
                     <h1 className={styles.heading}>Önskelista</h1>
                     <p>Förlora inte dina favoritprodukter! <br/> Skapa ett konto eller logga in  för att spara dem på alla dina enheter.</p>
                 </div>
@@ -178,7 +158,7 @@ export default function LikedPosters() {
                             <FontAwesomeIcon className={styles.heart} icon={solidHeart}/>
                         </div>  
                     </div>                         
-                </div>                         
+                </div>                          */}
             </div>
         </>
   
