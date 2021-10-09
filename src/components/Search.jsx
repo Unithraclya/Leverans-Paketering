@@ -1,4 +1,5 @@
 import  React, { useEffect, useRef, useState} from "react"
+import { useHistory } from 'react-router-dom'
 
 //style
 import SearchStyle from '../css/Search.module.css'
@@ -17,7 +18,7 @@ export default function Search() {
     
    
 
-   
+    const history = useHistory()
     const [posters, setPosters] = useState([]);
     const [search, setSearch] = useState('')
     
@@ -43,7 +44,7 @@ export default function Search() {
 
         >
           <div className={SearchStyle.image}>
-          <img src={poster.image} />
+          <img src={poster.image}  onClick={() => history.push('/poster/' + poster.id)}/>
           </div>
           <span>Titel:<br/>{poster.name}</span>
           <span>Beskrivning:<br/>{poster.description}</span>

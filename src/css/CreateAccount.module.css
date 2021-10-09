@@ -8,8 +8,7 @@
   grid-template-columns: repeat(1, 1fr);
   width: 90%;
   margin: auto;
-  margin-bottom: 246px;
-  margin-top: 3rem;
+  margin-top: 1rem;
 }
 
 .InlineForm {

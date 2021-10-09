@@ -49,6 +49,10 @@ export default function Home() {
         localStorage['LikedPosters'] = JSON.stringify(favoriteIds)
         setChange(Math.random())
       }
+
+
+
+   
  
 
 
@@ -95,13 +99,14 @@ export default function Home() {
 
             <div className={styles.items} >
                 <div className={styles.item}>
+                    {/* <div className={styles.image}><img className={styles.img}  onClick={() => history.push('/poster/' + id)}  src={image} /></div> */}
                     <div className={styles.image}><img className={styles.img}  onClick={() => history.push('/poster/' + id)}  src={image} /></div>
+
                     <div className={styles.top}>
                         <div className={styles.info}>
                             <p>{name} Poster {description} <br/> Från {price} kr</p>
                             
                         </div>
-                       
                         {navigator.appVersion.includes("Electron") &&<FontAwesomeIcon className={styles.heart} onClick={() => addFavorite(id)} icon={favoriteIds.includes(id)?solidHeart: faHeart}/>}
                     </div>  
                 </div>                                                                      
@@ -109,7 +114,7 @@ export default function Home() {
             
           
             </div>
-         ,console.log(posters))} 
+         ,)} 
         </div>        
        
     )

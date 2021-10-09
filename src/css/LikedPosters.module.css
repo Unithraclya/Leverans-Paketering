@@ -10,15 +10,15 @@
   height: fit-content;
   width: 80vw;
   margin: 0 auto;
-  display: flex;
+  display: grid;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .item {
   width: 250px;
-  height: 530px;
-  margin: 30px;
+  height: auto;
+  margin: auto;
   display: flex;
   flex-direction: column;
 }
@@ -117,7 +117,10 @@
 .btn:hover {
   background-color: #ffae00;
 }
-
+.remove {
+  width: 21px;
+  margin-left: 150px;
+}
 @media screen and (max-width: 320px) {
   main-container {
     display: none;

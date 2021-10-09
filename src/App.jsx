@@ -8,17 +8,13 @@ import Home from './pages/Home';
 import LikedPosters from './pages/LikedPosters';
 import Cart from './pages/Cart';
 import PosterPage from './pages/PosterPage';
+
 import Login from './pages/Login';
 import LoginNew from './pages/LoginNew';
 import CreateAccount from './pages/CreateAccount';
 import Confirmation from './pages/Confirmation';
 import Nav from './components/Nav';
 import Search from './components/Search';
-import Status from './components/Status';
-
-
-import LoginForm from './components/LoginForm';
-
 
 import Error404 from './pages/Error404';
 import Banner from './components/Banner';
@@ -29,14 +25,14 @@ import Electron from './components/Electron';
 
 export default function App() {
 
-  const [loggedInStatus, setLoggedInStatus] = useState("Inte inloggad");
+  const [loggedInStatus, setLoggedInStatus] = useState("Utloggad");
   const logout = () => {
     delete localStorage.loggedInUser;  
-    setLoggedInStatus("Inte inloggad");
+    setLoggedInStatus("Utloggad");
   }
 
   useEffect(() => {
-    localStorage.loggedInUser && loggedInStatus === "Inte inloggad" &&  setLoggedInStatus(JSON.parse(localStorage.loggedInUser).mail);
+    localStorage.loggedInUser && loggedInStatus === "Utloggad" &&  setLoggedInStatus(JSON.parse(localStorage.loggedInUser).mail);
     console.log(localStorage.loggedInUser);
   },[])
   console.log(loggedInStatus);
@@ -48,7 +44,6 @@ export default function App() {
 
       <Nav loggedInStatus={loggedInStatus} logout={logout}/>
       <Banner />
-      <Status/>
       {navigator.appVersion.includes("Electron") && <Electron/>} 
       {/* {navigator.appVersion.includes("Electron") && <LikedPosters/>} */}
 
@@ -56,18 +51,11 @@ export default function App() {
 
     
 
-        <Route  
-        path={"/Status"}   
-        render={props => (
-        <Status {...props} loggedInStatus={setLoggedIn} />
-        
-        )} />
-
         <Route exact path="/" component={Home} />
 
         {navigator.appVersion.includes("Electron") && <LikedPosters/>}
 
-        <Route exact path="/cart" component={Cart} />
+        <Route exact path="/Cart" component={Cart} />
 
         <Route exact path="/Search" component={Search} />
 
@@ -76,7 +64,6 @@ export default function App() {
         <Route exact path="/LoginPage">
         <LoginNew setLoggedInStatus = {setLoggedInStatus}/>    
         </Route>
-
 
         <Route exact path="/Login" component={Login} />
 

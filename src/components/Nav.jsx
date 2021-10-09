@@ -37,14 +37,15 @@ export default function Nav({loggedInStatus,logout}) {
 
       
      
-    console.log(loggedInStatus);
     return (
         
 <div className={NavStyle.MenuHeader}>
-        <div ref={ref}>
-        <h2>{loggedInStatus}</h2>
-        {loggedInStatus !== "Inte inloggad" && <button onClick={logout}>Logga ut</button>}
-        <div className={NavStyle.HeaderGrid}>
+      <div ref={ref}>
+      <div className={NavStyle.Status}>
+        <h2 className={NavStyle.Statustext}>{loggedInStatus}</h2>
+        {loggedInStatus !== "Utloggad" && <Link to="/LoginPage" className={NavStyle.Logout} onClick={logout}>Logga ut</Link>}
+      </div>
+    <div className={NavStyle.HeaderGrid}>
         {isMenuOpen && (
     
     <div className={NavStyle.TopNav}  
@@ -54,7 +55,8 @@ export default function Nav({loggedInStatus,logout}) {
         className={NavStyle.Links} >
         <Link to="/" className={NavStyle.Link}>Hem</Link>
         <Link to="/CreateAccount"className={NavStyle.Link}>Skapa Konto</Link>
-        <Link to="/LoginPage" className={NavStyle.Link}>Logga in</Link>
+        {loggedInStatus === "Utloggad" && <Link to="/LoginPage" className={NavStyle.Link}onClick={logout}>Logga in</Link>}
+        {loggedInStatus !== "Utloggad" && <Link to="/LoginPage" className={NavStyle.Link}onClick={logout}>Logga ut</Link>}
      </ul>
    </div>
      
@@ -71,7 +73,7 @@ export default function Nav({loggedInStatus,logout}) {
    
   </div> 
    
-
+         
             <Link to="/Search" className ={NavStyle.SearchIcon}><img src={SearchIcon} alt = 'Search' /></Link>
             <Link to="/" className={NavStyle.CompanyText}>POSTERGANG.COM </Link>
             {navigator.appVersion.includes("Electron") &&<Link to="/LikedPosters"className ={NavStyle.HeartIcon}><img src={HeartIcon} alt = 'Like'/></Link>}
@@ -80,8 +82,9 @@ export default function Nav({loggedInStatus,logout}) {
             {/* Empty line */}
             <hr className={NavStyle.HeaderLine}/>
         </div> 
+      
         </div>
-
+      
         </div>
        
     )
