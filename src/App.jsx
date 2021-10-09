@@ -16,10 +16,6 @@ import Confirmation from './pages/Confirmation';
 import Nav from './components/Nav';
 import Search from './components/Search';
 
-
-import LoginForm from './components/LoginForm';
-
-
 import Error404 from './pages/Error404';
 import Banner from './components/Banner';
 import Footer from './components/Footer'

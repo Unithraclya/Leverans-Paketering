@@ -37,7 +37,6 @@ export default function Nav({loggedInStatus,logout}) {
 
       
      
-    console.log(loggedInStatus);
     return (
         
 <div className={NavStyle.MenuHeader}>

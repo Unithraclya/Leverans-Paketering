@@ -32,7 +32,7 @@ const fetchPosters = async () => {
 
 
   const [change, setChange] = useState(null);
-  const addCart = id => {
+  const addCart = (id) => {
       let cartItems = localStorage['Cart'] && JSON.parse(localStorage['Cart']) || []
       cartItems.push(id)
       localStorage['Cart'] = JSON.stringify(cartItems)

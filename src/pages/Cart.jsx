@@ -1,4 +1,5 @@
 
+import { withContext, useNamedContext } from 'react-easier'
 
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
@@ -15,7 +16,8 @@ import remove from '../icons/remove.png'
 
 
 export default function Cart() {
-    
+
+ 
     const [favorites, setFavorites] = useState([])
     const [posters, setPosters] = useState([]);
 
@@ -42,30 +44,35 @@ export default function Cart() {
     
    
 
-            console.log(localStorage);
+    console.log(localStorage);
 
     return (
 
 <div className={CartStyle.cart}>  
 
 {posters.filter(posters => favorites.includes(posters.id))
-        .map(poster => (
-            <div    
-              key={poster.id}
+           .map(({id, name, description, price, image, category}) => (
+        <div    
+        key={id}
            
 >
         {/*Products */}
         <div className ={CartStyle.ProductGrid}>
         <span>Produkt</span><span className={CartStyle.Size}>Storlek</span>
-        <span>Antal</span><span>{poster.price}</span>
+        <span>Antal</span><span>{price}</span>
         <hr className={CartStyle.HeaderLine}/>
 
-        <img src={poster.image}className={CartStyle.Previewimg} alt = 'preview'/>
-        <h2 className={CartStyle.ProductTitle}>{poster.name}</h2>
+        <img src={image}className={CartStyle.Previewimg} alt = 'preview'/>
+        <h2 className={CartStyle.ProductTitle}>{name}</h2>
        
-        <h3 className={CartStyle.ProductPayment}>{poster.price}</h3>
+        <h3 className={CartStyle.ProductPayment}>{price}</h3>
+
+        
          </div>
+
+         
          <img src={remove} className={CartStyle.remove} onClick={() => removeFavorite(poster.id)}></img>
+
 
         {/*Address */}
         <h3 className={CartStyle.Title}>Adress</h3>

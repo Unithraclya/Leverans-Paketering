@@ -114,7 +114,7 @@ export default function Home() {
             
           
             </div>
-         ,console.log(posters))} 
+         ,)} 
         </div>        
        
     )
