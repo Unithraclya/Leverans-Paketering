@@ -3,6 +3,7 @@
 import React, { useState,useEffect } from 'react'
 import './App.css'
 import { Route, Switch } from "react-router";
+import { useHistory } from 'react-router-dom'
 
 import Home from './pages/Home';
 import LikedPosters from './pages/LikedPosters';
@@ -19,12 +20,27 @@ import Search from './components/Search';
 import Error404 from './pages/Error404';
 import Banner from './components/Banner';
 import Footer from './components/Footer'
-import Electron from './components/Electron';
+// import Electron from './components/Electron';
+
+
+  
 
 
 
 export default function App() {
 
+
+  
+  const history = useHistory()
+  if (screen.width <= 699) {
+    
+    history.push('/LoginPage/')
+    
+      // document.location = "Login";
+  }
+
+  
+    
   const [loggedInStatus, setLoggedInStatus] = useState("Utloggad");
   const logout = () => {
     delete localStorage.loggedInUser;  
@@ -38,11 +54,16 @@ export default function App() {
   console.log(loggedInStatus);
 
 
+  
+    
   return (
+   
     <div className="App">
       
 
-      <Nav loggedInStatus={loggedInStatus} logout={logout}/>
+      <Nav loggedInStatus={loggedInStatus} logout={logout} 
+       />
+     
       <Banner />
       {navigator.appVersion.includes("Electron") && <Electron/>} 
       {/* {navigator.appVersion.includes("Electron") && <LikedPosters/>} */}

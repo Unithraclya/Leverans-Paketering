@@ -51,7 +51,16 @@ export default function Home() {
       }
 
 
-
+      const [cart, setCart] = useState(null);
+      const addCart = id => {
+          
+          let cartItems = localStorage['Cart'] && JSON.parse(localStorage['Cart']) || []
+          cartItems.push(id)
+          localStorage['Cart'] = JSON.stringify(cartItems)
+          setCart(Math.random())
+            // Cart.concat([location.state])
+            // localStorage.setItem('Cart', JSON.stringify(Cart)) // set products as an array
+        }
    
  
 
@@ -105,8 +114,10 @@ export default function Home() {
                     <div className={styles.top}>
                         <div className={styles.info}>
                             <p>{name} Poster {description} <br/> Från {price} kr</p>
-                            
+                            <button onClick={() => addCart(id)} className={styles.btn}>Köp</button> 
+
                         </div>
+                        {/* <FontAwesomeIcon className={styles.heart} onClick={() => addFavorite(id)} icon={favoriteIds.includes(id)?solidHeart: faHeart}/> */}
                         {navigator.appVersion.includes("Electron") &&<FontAwesomeIcon className={styles.heart} onClick={() => addFavorite(id)} icon={favoriteIds.includes(id)?solidHeart: faHeart}/>}
                     </div>  
                 </div>                                                                      

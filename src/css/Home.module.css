@@ -124,6 +124,14 @@ button {
 
 .info {
   text-align: left;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  align-content: stretch;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  width: inherit;
 }
 
 .heart {
@@ -131,6 +139,18 @@ button {
   font-size: 23px;
 }
 
+.btn {
+  width: 60px;
+  height: 30px;
+  border: none;
+  display: flex;
+  background-color: #ffd000;
+  border: 1px solid black;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-size: 16px;
+  margin-left: 50px;
+}
 @media screen and (max-width: 320px) {
   main-container {
     display: none;

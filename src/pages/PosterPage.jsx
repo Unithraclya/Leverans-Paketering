@@ -31,17 +31,16 @@ const fetchPosters = async () => {
 
 
 
-  const [change, setChange] = useState(null);
-  const addCart = (id) => {
+  const [cart, setCart] = useState(null);
+  const addCart = id => {
       let cartItems = localStorage['Cart'] && JSON.parse(localStorage['Cart']) || []
       cartItems.push(id)
       localStorage['Cart'] = JSON.stringify(cartItems)
-      setChange(Math.random())
+      setCart(Math.random())
    
         // Cart.concat([location.state])
         // localStorage.setItem('Cart', JSON.stringify(Cart)) // set products as an array
     }
-
     // function addCart() {
     //     let productsString = localStorage.getItem('products')
     //     let products = []
