@@ -35,9 +35,11 @@ export default function Cart() {
 
 
     const removeAll = () => {
-        if (localStorage.length > 0) {
+        if (localStorage.length > 1) {
         localStorage.removeItem('Cart');
         history.push('/Confirmation')
+
+
     }
     else {
             
