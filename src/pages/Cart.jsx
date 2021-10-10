@@ -1,23 +1,14 @@
-
-import { withContext, useNamedContext } from 'react-easier'
-
-import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
-import { useHistory } from 'react-router-dom'
-
-/*StyleSheet */
+import React, {useState, useEffect} from 'react'
 import CartStyle from '../css/Cart.module.css'
+
 /*Imported forms */
-import CartAddress from '../components/CartAddressForm';
-import CartShipping from '../components/CartShippingForm';
-import CartPayment from '../components/CartPaymentForm';
-import CartProduct from '../components/CartProductForm';
+// import CartAddress from '../components/CartAddressForm';
+// import CartShipping from '../components/CartShippingForm';
+// import CartPayment from '../components/CartPaymentForm';
+// import CartProduct from '../components/CartProductForm';
 import remove from '../icons/remove.png'
 
-
 export default function Cart() {
-
- 
     const [favorites, setFavorites] = useState([])
     const [posters, setPosters] = useState([]);
 
@@ -32,73 +23,79 @@ export default function Cart() {
       let favoriteIds = localStorage['Cart'] && JSON.parse(localStorage['Cart']) || []
       setFavorites(favoriteIds)
     }, [])
-
+  
     const removeFavorite = id => {
-      let cartItems = localStorage['Cart'] && JSON.parse(localStorage['Cart']) || []
-      cartItems.splice(cartItems.indexOf(id), 1)
-      localStorage['Cart'] = JSON.stringify(cartItems)
-      setFavorites(cartItems)
-
+      let favoriteIds = localStorage['Cart'] && JSON.parse(localStorage['Cart']) || []
+      favoriteIds.splice(favoriteIds.indexOf(id), 1)
+      localStorage['Cart'] = JSON.stringify(favoriteIds)
+      setFavorites(favoriteIds)
     }
   
-    
-   
+    // {posters.map(({id, name, description, price, image, category}) => 
 
-    console.log(localStorage);
 
     return (
-
-<div className={CartStyle.cart}>  
-
-{posters.filter(posters => favorites.includes(posters.id))
-           .map(({id, name, description, price, image, category}) => (
-        <div    
-        key={id}
+        <>
+        
+        <div className={CartStyle.cart}>  
+            {posters.filter(poster => favorites.includes(poster.id))
+      .map(poster => (
+          <div    
+            key={poster.id}
            
->
-        {/*Products */}
+          >
+                  {/*Products */}
         <div className ={CartStyle.ProductGrid}>
-        <span>Produkt</span><span className={CartStyle.Size}>Storlek</span>
-        <span>Antal</span><span>{price}</span>
+        <span className={CartStyle.removeText} >Ta bort</span>
+        <img src={remove} className={CartStyle.remove} onClick={() => removeFavorite(poster.id)}></img>
+        <span className={CartStyle.Size}>Storlek</span>
+        <span>Antal</span><span className={CartStyle.Kr}>{poster.price} kr</span>
         <hr className={CartStyle.HeaderLine}/>
 
-        <img src={image}className={CartStyle.Previewimg} alt = 'preview'/>
-        <h2 className={CartStyle.ProductTitle}>{name}</h2>
-       
-        <h3 className={CartStyle.ProductPayment}>{price}</h3>
+        <img src={poster.image}className={CartStyle.Previewimg} alt = 'Poster preview'/>
+        <h2 className={CartStyle.ProductTitle}>Titel: {poster.name}</h2>
+
+        {/* <h3 className={CartStyle.ProductPayment}>{poster.price}</h3> */}
 
         
-         </div>
+        </div>
 
-         
-         <img src={remove} className={CartStyle.remove} onClick={() => removeFavorite(poster.id)}></img>
+           
+        
+    </div>
+          
+           
+        
+          
+        ) 
+    )}
+       {/* End of poster Map
+        
+            */}
 
+        <div className={CartStyle.Total}>
+          <p className={CartStyle.TotalSum}>Summa 139 kr</p>
+          <p>Inkl. moms</p>
 
-        {/*Address */}
-        <h3 className={CartStyle.Title}>Adress</h3>
+          <button className={CartStyle.Totalbutton}>Slutför köp</button>
+      </div>
+       {/* Address
+       <h3 className={CartStyle.Title}>Adress</h3>
         <CartAddress/>
 
-        {/*Shipping */}
-        <h3 className={CartStyle.Title}>Frakt</h3>
-        <CartShipping/>
+        {/*Shipping
+        /<h3 className={CartStyle.Title}>Frakt</h3>
+         <CartShipping/>
       
-        {/*Payment */}
+        {/*Payment 
         <h3 className={CartStyle.Title}>Betalning</h3>
-        <CartPayment/>
+        <CartPayment/> */
 
-         {/*Total */}
+         /*Total */}
         
-        <div className={CartStyle.Total}>
-            <p className={CartStyle.TotalSum}>Summa 139 kr</p>
-            <p>Inkl. moms</p>
+            </div>
+        </>
+  
+ )
 
-            <button className={CartStyle.Totalbutton}>Slutför köp</button>
-        </div>
-        </div>        
-            ))
-        } 
-        </div>  
-    
-              
-    )
 }

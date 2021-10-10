@@ -80,6 +80,7 @@
   border: none;
   border-radius: 5px;
   font-size: medium;
+  padding-top: 25px;
 }
 
 .Contents {
@@ -104,9 +105,10 @@
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(3, auto);
-  grid-gap: 20px;
+  grid-gap: 15px;
   align-items: center;
-  margin-top: -20px;
+  margin-top: 25px;
+  grid-row-gap: 25px;
 }
 
 .ProductGrid span {
@@ -115,6 +117,19 @@
 
 .Size {
   grid-column: 8;
+}
+
+.Kr {
+  width: 40px;
+}
+
+.remove {
+  width: 16px;
+}
+
+.removeText {
+  width: max-content;
+  min-width: 43px;
 }
 
 .Previewimg {
