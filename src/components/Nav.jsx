@@ -42,6 +42,7 @@ export default function Nav({loggedInStatus,logout}) {
 <div className={NavStyle.MenuHeader}>
       <div ref={ref}>
       <div className={NavStyle.Status}>
+        
         <h2 className={NavStyle.Statustext}>{loggedInStatus}</h2>
         {loggedInStatus !== "Utloggad" && <Link to="/LoginPage" className={NavStyle.Logout} onClick={logout}>Logga ut</Link>}
       </div>

@@ -53,11 +53,11 @@ export default function Home() {
 
       const [cart, setCart] = useState(null);
       const addCart = id => {
+          
           let cartItems = localStorage['Cart'] && JSON.parse(localStorage['Cart']) || []
           cartItems.push(id)
           localStorage['Cart'] = JSON.stringify(cartItems)
           setCart(Math.random())
-       
             // Cart.concat([location.state])
             // localStorage.setItem('Cart', JSON.stringify(Cart)) // set products as an array
         }

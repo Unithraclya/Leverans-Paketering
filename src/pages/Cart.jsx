@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import CartStyle from '../css/Cart.module.css'
+import { useHistory } from 'react-router-dom'
 
 /*Imported forms */
 // import CartAddress from '../components/CartAddressForm';
@@ -11,7 +12,8 @@ import remove from '../icons/remove.png'
 export default function Cart() {
     const [favorites, setFavorites] = useState([])
     const [posters, setPosters] = useState([]);
-
+    const history = useHistory()
+    const [text, NewText] = useState("");
     useEffect(() => {
         (async () => {
           //fetch all users
@@ -30,10 +32,21 @@ export default function Cart() {
       localStorage['Cart'] = JSON.stringify(favoriteIds)
       setFavorites(favoriteIds)
     }
-  
-    // {posters.map(({id, name, description, price, image, category}) => 
 
 
+    const removeAll = () => {
+        if (localStorage.length > 0) {
+        localStorage.removeItem('Cart');
+        history.push('/Confirmation')
+    }
+    else {
+            
+            
+      }
+    
+ } // {posters.map(({id, name, description, price, image, category}) => 
+
+    
     return (
         <>
         
@@ -74,10 +87,9 @@ export default function Cart() {
             */}
 
         <div className={CartStyle.Total}>
-          <p className={CartStyle.TotalSum}>Summa 139 kr</p>
+          <p className={CartStyle.TotalSum}></p>
           <p>Inkl. moms</p>
-
-          <button className={CartStyle.Totalbutton}>Slutför köp</button>
+          <button className={CartStyle.Totalbutton} onClick={removeAll}>Slutför köp</button>
       </div>
        {/* Address
        <h3 className={CartStyle.Title}>Adress</h3>
@@ -96,6 +108,6 @@ export default function Cart() {
             </div>
         </>
   
- )
+  )
 
 }
