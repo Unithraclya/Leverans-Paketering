@@ -155,6 +155,7 @@
   font-size: 12px;
   grid-column: 1 / span 3;
   text-align: left;
+  grid-row: 1;
 }
 
 .Logout {
@@ -163,4 +164,17 @@
   font-size: 14px;
   text-decoration: underline;
   cursor: pointer;
+}
+
+.MobText {
+  display: none;
+}
+
+@media screen and (max-width: 699px) {
+  .MobText {
+    display: block;
+    grid-column: 8 / span 9;
+    grid-row: 1;
+    font-size: 15px;
+  }
 }
