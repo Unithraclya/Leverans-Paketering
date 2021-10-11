@@ -33,9 +33,9 @@ export default function Cart() {
       setFavorites(favoriteIds)
     }
 
-    
     const removeAll = () => {
-        if (localStorage.length > 2 ) {
+        let testStorage = localStorage['Cart'] && JSON.parse(localStorage['Cart']) || []
+        if (testStorage.length > 0) {
         localStorage.removeItem('Cart');
         history.push('/Confirmation')
 
