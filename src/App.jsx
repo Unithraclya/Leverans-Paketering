@@ -20,7 +20,7 @@ import Search from './components/Search';
 import Error404 from './pages/Error404';
 import Banner from './components/Banner';
 import Footer from './components/Footer'
-import Electron from './components/Electron';
+// import Electron from './components/Electron';
 
 
 export default function App() {
