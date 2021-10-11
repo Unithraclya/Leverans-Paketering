@@ -33,20 +33,34 @@ export default function Cart() {
       setFavorites(favoriteIds)
     }
 
-
+    
     const removeAll = () => {
-        if (localStorage.length > 1) {
+        if (localStorage.length > 2 ) {
         localStorage.removeItem('Cart');
         history.push('/Confirmation')
 
 
     }
-    else {
-            
-            
+      else {
+     
+      //Nothing
+
       }
     
- } // {posters.map(({id, name, description, price, image, category}) => 
+  } 
+
+  //Find the sum of all posters
+  function findSum(){
+    let x = 0;
+  {posters.filter(poster => favorites.includes(poster.id))
+    .map(({price}) => x = x + price)
+
+
+        return x;
+      } 
+    }
+
+    const totalUsingMap = findSum()
 
     
     return (
@@ -69,43 +83,27 @@ export default function Cart() {
 
         <img src={poster.image}className={CartStyle.Previewimg} alt = 'Poster preview'/>
         <h2 className={CartStyle.ProductTitle}>Titel: {poster.name}</h2>
-
-        {/* <h3 className={CartStyle.ProductPayment}>{poster.price}</h3> */}
-
         
-        </div>
-
-           
-        
+        </div>   
     </div>
           
-           
-        
-          
+                 
         ) 
     )}
-       {/* End of poster Map
-        
-            */}
+                    {/*Cart */}
 
+        <div>
         <div className={CartStyle.Total}>
-          <p className={CartStyle.TotalSum}></p>
+          <p className={CartStyle.TotalSum}>{totalUsingMap} kr</p>
           <p>Inkl. moms</p>
           <button className={CartStyle.Totalbutton} onClick={removeAll}>Slutför köp</button>
       </div>
-       {/* Address
-       <h3 className={CartStyle.Title}>Adress</h3>
-        <CartAddress/>
-
-        {/*Shipping
-        /<h3 className={CartStyle.Title}>Frakt</h3>
-         <CartShipping/>
       
-        {/*Payment 
-        <h3 className={CartStyle.Title}>Betalning</h3>
-        <CartPayment/> */
-
-         /*Total */}
+      {/* ))
+       
+    } */}
+      </div>
+        
         
             </div>
         </>
