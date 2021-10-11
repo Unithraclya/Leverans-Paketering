@@ -82,7 +82,7 @@ e.preventDefault();
           }else{
           console.log("registration res", res);
           setError(null);
-          history.push('/')
+          history.push('/loginpage')
         }})
 
       .catch((err) => {

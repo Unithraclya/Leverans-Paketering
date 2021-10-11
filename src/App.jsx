@@ -20,26 +20,14 @@ import Search from './components/Search';
 import Error404 from './pages/Error404';
 import Banner from './components/Banner';
 import Footer from './components/Footer'
-// import Electron from './components/Electron';
-
-
-  
-
+import Electron from './components/Electron';
 
 
 export default function App() {
 
 
-  
   const history = useHistory()
-  if (screen.width <= 699) {
-    
-    history.push('/LoginPage/')
-    
-      // document.location = "Login";
-  }
 
-  
     
   const [loggedInStatus, setLoggedInStatus] = useState("Utloggad");
   const logout = () => {
@@ -50,9 +38,18 @@ export default function App() {
   useEffect(() => {
     localStorage.loggedInUser && loggedInStatus === "Utloggad" &&  setLoggedInStatus(JSON.parse(localStorage.loggedInUser).mail);
     console.log(localStorage.loggedInUser);
-  },[])
+
+    },[]
+  )
   console.log(loggedInStatus);
 
+  useEffect(() => {
+    if (screen.width <= 699) {
+    
+      history.push('/LoginPage/')
+      }
+    },[]
+  )
 
   
     

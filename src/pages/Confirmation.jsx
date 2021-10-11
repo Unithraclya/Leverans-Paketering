@@ -13,6 +13,8 @@ export default function Confirmation() {
                 display: "block",
                 marginTop: "10px",
                 fontSize: "15px",
+                cursor: "pointer"
+
             }
     }
     

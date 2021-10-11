@@ -68,6 +68,7 @@
 }
 .TotalSum {
   font-size: 20px;
+  font-family: sans-serif;
 }
 
 .Totalbutton {
@@ -125,6 +126,7 @@
 
 .remove {
   width: 16px;
+  cursor: pointer;
 }
 
 .removeText {
