@@ -14,6 +14,8 @@ export default function Cart() {
     const [posters, setPosters] = useState([]);
     const history = useHistory()
     const [text, NewText] = useState("");
+    
+    
     useEffect(() => {
         (async () => {
           //fetch all users
@@ -31,6 +33,7 @@ export default function Cart() {
       favoriteIds.splice(favoriteIds.indexOf(id), 1)
       localStorage['Cart'] = JSON.stringify(favoriteIds)
       setFavorites(favoriteIds)
+
     }
 
     const removeAll = () => {
@@ -62,6 +65,20 @@ export default function Cart() {
 
     const totalUsingMap = findSum()
 
+      //Find how many posters
+  function findAmount(){
+
+
+    let x = localStorage['Cart'] && JSON.parse(localStorage['Cart']) || []
+    console.log("x",x.length);
+    
+    return x.length;
+       
+       
+    }
+
+    const totalCount = findAmount()
+
     
     return (
         <>
@@ -89,19 +106,20 @@ export default function Cart() {
           
                  
         ) 
-    )}
+      )
+    }
                     {/*Cart */}
 
         <div>
         <div className={CartStyle.Total}>
           <p className={CartStyle.TotalSum}>{totalUsingMap} kr</p>
+          <p className={CartStyle.TotalSum}>{totalCount} st</p>
+
           <p>Inkl. moms</p>
           <button className={CartStyle.Totalbutton} onClick={removeAll}>Slutför köp</button>
       </div>
       
-      {/* ))
-       
-    } */}
+    
       </div>
         
         

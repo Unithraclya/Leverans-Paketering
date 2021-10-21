@@ -11,36 +11,21 @@ import { faHeart, faComment } from "@fortawesome/free-regular-svg-icons";
 
 export default function Home() {
     const [posters, setPosters] = useState([]);
-    const history = useHistory()
+    const history = useHistory();
 
 
+    
     useEffect(() => {
         (async () => {
           //fetch all users
           setPosters(await(await fetch('/api/posters' )).json());
+
         })();
       }, []);
 
 
       let favoriteIds = localStorage['LikedPosters'] && JSON.parse(localStorage['LikedPosters']) || []
 
-    // const [setPosterInfo] = useState([]);
-    // useEffect(() => {
-    //     fetchPosterInfo();
-    // }, [])
-
-    // const fetchPosterInfo = async () => {
-    //     try {
-    //         const response = await fetch ('/api/posters');
-    //         if (!response.ok) {
-    //             throw new Error ('HTTP Error! status: ' + response.status);
-    //         }
-    //         const data = await response.json();
-    //         setPosterInfo(data); 
-    //     } catch (error) {
-    //         console.log(error);
-    //     }
-    // }
 
     const [change, setChange] = useState(null);
     const addFavorite = id => {
@@ -50,14 +35,15 @@ export default function Home() {
         setChange(Math.random())
       }
 
+    
 
-      const [cart, setCart] = useState(null);
-      const addCart = id => {
-          
+      const addCart = id  => {
+       
           let cartItems = localStorage['Cart'] && JSON.parse(localStorage['Cart']) || []
           cartItems.push(id)
           localStorage['Cart'] = JSON.stringify(cartItems)
-          setCart(Math.random())
+        //   history.go(0)
+        //   window.location.reload(false)
             // Cart.concat([location.state])
             // localStorage.setItem('Cart', JSON.stringify(Cart)) // set products as an array
         }
@@ -114,7 +100,7 @@ export default function Home() {
                     <div className={styles.top}>
                         <div className={styles.info}>
                             <p>{name} Poster {description} <br/> Från {price} kr</p>
-                            <button onClick={() => addCart(id)} className={styles.btn}>Köp</button> 
+                            <button onClick={(e) => addCart(id)} className={styles.btn}>Köp</button> 
 
                         </div>
                         {/* <FontAwesomeIcon className={styles.heart} onClick={() => addFavorite(id)} icon={favoriteIds.includes(id)?solidHeart: faHeart}/> */}

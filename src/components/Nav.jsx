@@ -1,6 +1,5 @@
-import { useEffect, useRef, useState} from "react"
+import React, { useEffect, useRef, useState} from "react"
 import NavStyle from '../css/Nav.module.css'
-import React from 'react'
 import {Link} from 'react-router-dom';
 
 //Importing Icons
@@ -12,6 +11,41 @@ import CartIcon from '../icons/cartfilled36dp.svg'
 
 
 export default function Nav({loggedInStatus,logout}) {
+
+       const [posters, setPosters] = useState([]);
+       const [favorites, setFavorites] = useState([])
+
+
+       useEffect(() => {
+        (async () => {
+          //fetch all posters
+          setPosters(await(await fetch('/api/posters' )).json());
+
+        })();
+      }, []);
+
+      useEffect(() => {
+      let favoriteIds = localStorage['Cart'] && JSON.parse(localStorage['Cart']) || []
+      setFavorites(favoriteIds)
+      
+    }, [])
+   
+
+
+    function find(){
+      
+      let x = localStorage['Cart'] && JSON.parse(localStorage['Cart']) || []
+      console.log("x",x.length);
+
+      return x.length;
+      
+
+  }
+    const total = find()
+  
+    
+
+
 
     const ref = useRef()
 
@@ -63,9 +97,7 @@ export default function Nav({loggedInStatus,logout}) {
    </div>
      
 )}
-   
-      
- 
+    
             <div 
             className={NavStyle.center} 
             alt ="Nav button" 
@@ -80,6 +112,11 @@ export default function Nav({loggedInStatus,logout}) {
             <Link to="/" className={NavStyle.CompanyText}>POSTERGANG.COM </Link>
             {navigator.appVersion.includes("Electron") &&<Link to="/LikedPosters"className ={NavStyle.HeartIcon}><img src={HeartIcon} alt = 'Like'/></Link>}
             <Link to="/Cart"className ={NavStyle.CartIcon}><img src={CartIcon} alt = 'Cart'/></Link>
+     
+              
+             <p>{total} st</p>
+
+           
            
             {/* Empty line */}
             <hr className={NavStyle.HeaderLine}/>
@@ -88,6 +125,6 @@ export default function Nav({loggedInStatus,logout}) {
         </div>
       
         </div>
-       
+      
     )
 }
